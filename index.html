@@ -13114,22 +13114,27 @@ def display_puzzle_html(state, title=""):
     html_str = f"<div style='margin:10px 0;'>"
     if title:
         html_str += f"<div style='font-weight:700; margin-bottom:6px; font-family:sans-serif'>{title}</div>"
-    html_str += "<div style='display:grid; grid-template-columns:repeat(3, 62px); grid-template-rows:repeat(3, 62px); gap:6px; background:#334155; padding:8px; border-radius:12px; width:fit-content;'>"
+    html_str += "<div style='display:grid; grid-template-columns:repeat(3, 62px); grid-template-rows:repeat(3, 62px);\
+    gap:6px; background:#334155; padding:8px; border-radius:12px; width:fit-content;'>"
     for v in state:
         if v == 0:
             html_str += "<div style='background:#1e293b; border-radius:8px; box-shadow:inset 0 0 10px #0004;'></div>"
         else:
-            html_str += f"<div style='background:linear-gradient(135deg,#60a5fa,#3b82f6); color:white; font-weight:800; font-size:22px; font-family:Arial; display:flex; align-items:center; justify-content:center; border-radius:8px;'>{v}</div>"
+            html_str += f"<div style='background:linear-gradient(135deg,#60a5fa,#3b82f6); color:white;\
+            font-weight:800; font-size:22px; font-family:Arial; display:flex; align-items:center; justify-content:center;\
+            border-radius:8px;'>{v}</div>"
     html_str += "</div></div>"
     return html_str
 
 # --- Panel Panduan Buka-Tutup (Accordion) ---
 manual_html = """
 <style>
- .guide-box { background:#fffbeb; border-radius:12px; border-left:6px solid #f59e0b; margin:20px 0; font-family:sans-serif; overflow:hidden; }
+ .guide-box { background:#fffbeb; border-radius:12px; border-left:6px solid #f59e0b;\
+ margin:20px 0; font-family:sans-serif; overflow:hidden; }
  .guide-box details { border-bottom:1px solid #fde68a; }
  .guide-box details:last-child { border-bottom:none; }
- .guide-box summary { list-style:none; cursor:pointer; padding:14px 18px; font-weight:700; color:#92400e; display:flex; justify-content:space-between; align-items:center; }
+ .guide-box summary { list-style:none; cursor:pointer; padding:14px 18px; font-weight:700;\
+ color:#92400e; display:flex; justify-content:space-between; align-items:center; }
  .guide-box summary::-webkit-details-marker { display:none; }
  .guide-box summary:after { content:'▼'; font-size:12px; transition:0.2s; }
  .guide-box details[open] summary:after { transform:rotate(180deg); }
@@ -13149,9 +13154,11 @@ manual_html = """
     <div class="content">
       <ol style='margin:5px 0 0 20px;'>
         <li><b>Pilih Puzzle:</b> Gunakan dropdown. Tersedia Contoh Mudah, Sedang, Sulit, dan Unsolvable.</li>
-        <li><b>Input Manual:</b> Pilih <i>Input Manual</i> lalu ketik 9 angka 0-8 dipisah spasi. Contoh: <code>1 2 3 4 5 6 7 0 8</code>. Angka <b>0 = kotak kosong</b>.</li>
+        <li><b>Input Manual:</b> Pilih <i>Input Manual</i> lalu ketik 9 angka 0-8 dipisah spasi. Contoh:\
+        <code>1 2 3 4 5 6 7 0 8</code>. Angka <b>0 = kotak kosong</b>.</li>
         <li><b>Analisis:</b> Sistem otomatis menghitung jumlah inversi dan status solvable.</li>
-        <li><b>Lihat Solusi:</b> Jika solvable, gunakan slider <b>"Geser untuk melihat langkah"</b> untuk melihat animasi dari AWAL sampai GOAL.</li>
+        <li><b>Lihat Solusi:</b> Jika solvable, gunakan slider <b>"Geser untuk melihat langkah"</b>\
+        untuk melihat animasi dari AWAL sampai GOAL.</li>
       </ol>
     </div>
   </details>
@@ -13160,7 +13167,8 @@ manual_html = """
     <summary>🧩 2. Kriteria Solvabilitas (Kenapa Ada yang Tidak Bisa?)</summary>
     <div class="content">
       Tidak semua acakan 8-puzzle bisa diselesaikan. Ini hukum matematisnya.<br><br>
-      <b>Inversi</b> = pasangan tile (i,j) dimana i muncul lebih dulu dari j tapi nilainya lebih besar. Contoh <code>[1,3,2]</code> punya 1 inversi (3>2).<br>
+      <b>Inversi</b> = pasangan tile (i,j) dimana i muncul lebih dulu dari j tapi nilainya lebih besar. Contoh\
+      <code>[1,3,2]</code> punya 1 inversi (3>2).<br>
       <div style='background:#fef3c7; padding:8px 10px; border-radius:6px; margin-top:8px;'>
       ✅ Jika <b>jumlah inversi GENAP</b> → <b>SOLVABLE</b><br>
       ❌ Jika <b>jumlah inversi GANJIL</b> → <b>UNSOLVABLE</b> (mustahil ke goal, seberapapun dicoba)
@@ -13180,7 +13188,8 @@ manual_html = """
         </div>
         <div>
           <b>Manhattan Distance</b><br>
-          h(n) dihitung dari total jarak Manhattan setiap angka ke posisi seharusnya di goal. Heuristik ini admissible, jadi solusi yang ditemukan <b>dijamin optimal</b> (paling pendek).
+          h(n) dihitung dari total jarak Manhattan setiap angka ke posisi seharusnya di goal. Heuristik ini admissible,\
+          jadi solusi yang ditemukan <b>dijamin optimal</b> (paling pendek).
         </div>
       </div>
     </div>
@@ -13207,16 +13216,19 @@ def interactive_8puzzle(
         if len(nums)!= 9:
             show(html("<div style='color:#dc2626; font-weight:bold'>❌ Error: Masukkan tepat 9 angka.</div>")); return
         if set(nums)!= set(range(9)):
-            show(html("<div style='color:#dc2626; font-weight:bold'>❌ Error: Angka harus 0-8 tanpa duplikat.</div>")); return
+            show(html("<div style='color:#dc2626; font-weight:bold'>❌ Error: Angka harus 0-8 tanpa duplikat.</div>"));\
+            return
 
         inv = calculate_inversions(nums)
         solvable = (inv % 2 == 0)
 
         show(html(f"""
-        <div style='background:#f0f9ff; padding:12px 14px; border-radius:10px; border-left:5px solid #0ea5e9; font-family:sans-serif;'>
+        <div style='background:#f0f9ff; padding:12px 14px; border-radius:10px; border-left:5px solid #0ea5e9;\
+        font-family:sans-serif;'>
         <b>📊 Hasil Analisis:</b><br>
         • Jumlah Inversi: <b>{inv}</b> ({'Genap' if inv%2==0 else 'Ganjil'})<br>
-        • Status: <b style='color:{"#16a34a" if solvable else "#dc2626"}'>{'✅ SOLVABLE - Dapat diselesaikan' if solvable else '❌ UNSOLVABLE - Tidak dapat diselesaikan'}</b>
+        • Status: <b style='color:{"#16a34a" if solvable else "#dc2626"}'>{'✅ SOLVABLE - Dapat diselesaikan' \
+if solvable else '❌ UNSOLVABLE - Tidak dapat diselesaikan'}</b>
         </div>"""))
 
         show(html(display_puzzle_html(nums, "🎯 Kondisi Awal")))
@@ -13225,7 +13237,8 @@ def interactive_8puzzle(
             goal = [1,2,3,4,5,6,7,8,0]
             path = a_star(nums, goal)
             if path:
-                show(html(f"<div style='background:#dcfce7; padding:10px 14px; border-radius:10px; font-family:sans-serif;'><b>✅ Solusi Optimal Ditemukan!</b> Membutuhkan <b>{len(path)-1}</b> langkah.</div>"))
+                show(html(f"<div style='background:#dcfce7; padding:10px 14px; border-radius:10px; font-family:sans-serif;'>\
+                <b>✅ Solusi Optimal Ditemukan!</b> Membutuhkan <b>{len(path)-1}</b> langkah.</div>"))
 
                 @interact
                 def show_step(step=slider(0, len(path)-1, 1, 0, label="Geser untuk melihat langkah")):
@@ -13235,7 +13248,9 @@ def interactive_8puzzle(
                     else: label = f"🔹 LANGKAH {step} dari {len(path)-1}"
                     show(html(display_puzzle_html(s, label)))
         else:
-            show(html("<div style='background:#fee2e2; padding:12px; border-radius:10px; font-family:sans-serif;'><b>Kenapa tidak bisa?</b> Karena jumlah inversi ganjil, tidak ada rangkaian pergeseran yang bisa mencapai goal. Silakan coba puzzle lain.</div>"))
+            show(html("<div style='background:#fee2e2; padding:12px; border-radius:10px; font-family:sans-serif;'>\
+            <b>Kenapa tidak bisa?</b> Karena jumlah inversi ganjil, tidak ada rangkaian pergeseran yang\
+            bisa mencapai goal. Silakan coba puzzle lain.</div>"))
 
     except Exception as e:
         show(html(f"<div style='color:red'>Error: {e}</div>"))
