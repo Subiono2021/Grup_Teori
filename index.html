@@ -1114,9 +1114,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <li>
 						<b>Kriptografi & Keamanan Siber:</b> Keamanan WhatsApp, Blockchain, dan transaksi perbankan bertumpu pada grup siklik besar dan grup kurva eliptik. Di Indonesia, QRIS adalah suatu aplikasi transaksi yang diakui. Anda bisa melihat pondasi matematika dalam QRIS di artikel berikut:
 						<br>				
-<iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/Subiono2021/Dokumen-PDF/main/qr_code_ringkasan.pdf#zoom=125" 
-  style="width:100%; height:90vh; border:none; border-radius:8px;" 
-  frameborder="0">
+<iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/Subiono2021/Dokumen-PDF/main/qr_code_ringkasan.pdf#zoom=125"  style="width:100%; height:90vh; border:none; border-radius:8px;" frameborder="0">
 </iframe>					
 						</li>
                         <li><b>Fisika & Kimia:</b> Klasifikasi partikel elementer (Model Standar) dan struktur kristal molekul menggunakan Grup Lie dan Grup Simetri. Berikut adalah artikel terkait dengan peranan teori grup dalam Pola Molekul dalam Kimia Organik:
@@ -1194,7 +1192,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <br>	
 					
                     <p>
-					<b>3. Visi BiMath ke Depan:</b> Ke depan, pembelajaran tidak lagi terbatas pada PDF statis. Naskah ini adalah <b>Living Document</b>  dokumen hidup yang komputasinya berjalan di atas cloud, dapat diakses dari HP di desa maupun laptop di kota, dan terus berkembang bersama masukan pembaca dan kemajuan AI. Inilah demokratisasi ilmu sejati.
+					<b>3. Visi BiMath ke Depan:</b> Ke depan, pembelajaran tidak lagi terbatas pada PDF statis. Naskah ini adalah <b>Living Document</b>  dokumen hidup yang komputasinya berjalan di atas cloud, dapat diakses dari HP di desa maupun laptop di kota, dan terus berkembang bersama masukan pembaca dan kemajuan AI. Inilah demokratisasi ilmu sejati. Silahkan anda simak pemikiran BiMath dalam
+					<a href="https://www.youtube.com/watch?v=oduzNkOtT2o" target="_blank"><b>BiMath-Rumah-Nalar-Dunia</b></a>
 					</p>
                 </div>
 
@@ -13052,14 +13051,13 @@ Dalam beberapa algoritma pencarian solusi sliding puzzle, paritas digunakan untu
 </div>
 <div class="sage-cell-content">
 <script type="text/x-sage">
-# === Versi stabil interaktif dengan @interact ===
+# === 8-Puzzle Solver - Versi Final Rapi & Edukatif ===
 from sage.all import *
 import heapq
-import random
 
 # --- Algoritma & utilitas dasar ---
 def calculate_inversions(state):
-    flat = [x for x in state if x != 0]
+    flat = [x for x in state if x!= 0]
     inv = 0
     for i in range(len(flat)):
         for j in range(i + 1, len(flat)):
@@ -13081,227 +13079,166 @@ def get_neighbors(state):
     neighbors = []
     z = state.index(0)
     r, c = divmod(z, 3)
-    moves = []
-    if r > 0: moves.append((-1, 0))
-    if r < 2: moves.append((1, 0))
-    if c > 0: moves.append((0, -1))
-    if c < 2: moves.append((0, 1))
-    for dr, dc in moves:
-        nr, nc = r + dr, c + dc
-        ni = nr * 3 + nc
-        new = state[:]
-        new[z], new[ni] = new[ni], new[z]
-        neighbors.append(new)
+    for dr, dc in [(-1,0),(1,0),(0,-1),(0,1)]:
+        nr, nc = r+dr, c+dc
+        if 0 <= nr < 3 and 0 <= nc < 3:
+            ni = nr*3 + nc
+            new = state[:]
+            new[z], new[ni] = new[ni], new[z]
+            neighbors.append(new)
     return neighbors
 
 def a_star(start, goal):
     open_set = []
-    heapq.heappush(open_set, (manhattan_distance(start, goal), start))
+    heapq.heappush(open_set, (manhattan_distance(start, goal), 0, start))
     came_from = {}
     g_score = {tuple(start): 0}
-    f_score = {tuple(start): manhattan_distance(start, goal)}
-    
     while open_set:
-        _, current = heapq.heappop(open_set)
-        current_tuple = tuple(current)
-        
+        _, g, current = heapq.heappop(open_set)
         if current == goal:
-            path = []
-            while current_tuple in came_from:
-                path.append(current)
-                current = came_from[current_tuple]
-                current_tuple = tuple(current)
-            path.append(start)
+            path = [current]
+            while tuple(path[-1]) in came_from:
+                path.append(came_from[tuple(path[-1])])
             return path[::-1]
-            
         for nb in get_neighbors(current):
-            nb_tuple = tuple(nb)
-            tentative_g = g_score[current_tuple] + 1
-            
-            if nb_tuple not in g_score or tentative_g < g_score[nb_tuple]:
-                came_from[nb_tuple] = current
-                g_score[nb_tuple] = tentative_g
-                f_score[nb_tuple] = tentative_g + manhattan_distance(nb, goal)
-                
-                # Cek apakah sudah ada di open_set
-                found = False
-                for idx, (f_val, state) in enumerate(open_set):
-                    if state == nb:
-                        found = True
-                        if tentative_g < g_score[nb_tuple]:
-                            open_set[idx] = (f_score[nb_tuple], nb)
-                            heapq.heapify(open_set)
-                        break
-                
-                if not found:
-                    heapq.heappush(open_set, (f_score[nb_tuple], nb))
-                    
+            tentative_g = g + 1
+            if tuple(nb) not in g_score or tentative_g < g_score[tuple(nb)]:
+                came_from[tuple(nb)] = current
+                g_score[tuple(nb)] = tentative_g
+                f = tentative_g + manhattan_distance(nb, goal)
+                heapq.heappush(open_set, (f, tentative_g, nb))
     return None
 
-def display_puzzle(p):
-    s = "┌───┬───┬───┐\n"
-    for i in range(0, 9, 3):
-        row = p[i:i+3]
-        s += "│"
-        for num in row:
-            s += f" {num if num != 0 else ' '} │"
-        s += "\n"
-        if i < 6:
-            s += "├───┼───┼───┤\n"
-    s += "└───┴───┴───┘"
-    return s
+# --- FIX: Grid HTML yang terbaca ---
+def display_puzzle_html(state, title=""):
+    html_str = f"<div style='margin:10px 0;'>"
+    if title:
+        html_str += f"<div style='font-weight:700; margin-bottom:6px; font-family:sans-serif'>{title}</div>"
+    html_str += "<div style='display:grid; grid-template-columns:repeat(3, 62px); grid-template-rows:repeat(3, 62px); gap:6px; background:#334155; padding:8px; border-radius:12px; width:fit-content;'>"
+    for v in state:
+        if v == 0:
+            html_str += "<div style='background:#1e293b; border-radius:8px; box-shadow:inset 0 0 10px #0004;'></div>"
+        else:
+            html_str += f"<div style='background:linear-gradient(135deg,#60a5fa,#3b82f6); color:white; font-weight:800; font-size:22px; font-family:Arial; display:flex; align-items:center; justify-content:center; border-radius:8px;'>{v}</div>"
+    html_str += "</div></div>"
+    return html_str
 
-# -- Interaksi dengan @interact --
+# --- Panel Panduan Buka-Tutup (Accordion) ---
+manual_html = """
+<style>
+ .guide-box { background:#fffbeb; border-radius:12px; border-left:6px solid #f59e0b; margin:20px 0; font-family:sans-serif; overflow:hidden; }
+ .guide-box details { border-bottom:1px solid #fde68a; }
+ .guide-box details:last-child { border-bottom:none; }
+ .guide-box summary { list-style:none; cursor:pointer; padding:14px 18px; font-weight:700; color:#92400e; display:flex; justify-content:space-between; align-items:center; }
+ .guide-box summary::-webkit-details-marker { display:none; }
+ .guide-box summary:after { content:'▼'; font-size:12px; transition:0.2s; }
+ .guide-box details[open] summary:after { transform:rotate(180deg); }
+ .guide-box.content { background:white; padding:12px 18px 16px 18px; font-size:14px; line-height:1.6; color:#44403c; }
+ .guide-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:600px){.guide-grid{ grid-template-columns:1fr; } }
+</style>
+
+<div class="guide-box">
+  <div style='padding:14px 18px 0 18px;'>
+    <h3 style='margin:0 0 4px 0; color:#92400e;'>🎯 Panduan 8-Puzzle Solver Interaktif</h3>
+    <p style='margin:0 0 10px 0; font-size:13px; color:#a16207;'>Klik bagian di bawah untuk buka / tutup penjelasan.</p>
+  </div>
+
+  <details open>
+    <summary>📘 1. Cara Menggunakan</summary>
+    <div class="content">
+      <ol style='margin:5px 0 0 20px;'>
+        <li><b>Pilih Puzzle:</b> Gunakan dropdown. Tersedia Contoh Mudah, Sedang, Sulit, dan Unsolvable.</li>
+        <li><b>Input Manual:</b> Pilih <i>Input Manual</i> lalu ketik 9 angka 0-8 dipisah spasi. Contoh: <code>1 2 3 4 5 6 7 0 8</code>. Angka <b>0 = kotak kosong</b>.</li>
+        <li><b>Analisis:</b> Sistem otomatis menghitung jumlah inversi dan status solvable.</li>
+        <li><b>Lihat Solusi:</b> Jika solvable, gunakan slider <b>"Geser untuk melihat langkah"</b> untuk melihat animasi dari AWAL sampai GOAL.</li>
+      </ol>
+    </div>
+  </details>
+
+  <details>
+    <summary>🧩 2. Kriteria Solvabilitas (Kenapa Ada yang Tidak Bisa?)</summary>
+    <div class="content">
+      Tidak semua acakan 8-puzzle bisa diselesaikan. Ini hukum matematisnya.<br><br>
+      <b>Inversi</b> = pasangan tile (i,j) dimana i muncul lebih dulu dari j tapi nilainya lebih besar. Contoh <code>[1,3,2]</code> punya 1 inversi (3>2).<br>
+      <div style='background:#fef3c7; padding:8px 10px; border-radius:6px; margin-top:8px;'>
+      ✅ Jika <b>jumlah inversi GENAP</b> → <b>SOLVABLE</b><br>
+      ❌ Jika <b>jumlah inversi GANJIL</b> → <b>UNSOLVABLE</b> (mustahil ke goal, seberapapun dicoba)
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>⚡ 3. Algoritma di Balik Layar</summary>
+    <div class="content">
+      <div class="guide-grid">
+        <div>
+          <b>A* Search</b><br>
+          Mencari jalur terpendek dengan rumus: <code>f(n) = g(n) + h(n)</code><br>
+          g(n) = langkah yang sudah ditempuh dari awal<br>
+          h(n) = perkiraan sisa langkah ke goal
+        </div>
+        <div>
+          <b>Manhattan Distance</b><br>
+          h(n) dihitung dari total jarak Manhattan setiap angka ke posisi seharusnya di goal. Heuristik ini admissible, jadi solusi yang ditemukan <b>dijamin optimal</b> (paling pendek).
+        </div>
+      </div>
+    </div>
+  </details>
+</div>
+"""
+show(html(manual_html))
+
+# -- Interaksi Utama --
 @interact
 def interactive_8puzzle(
     puzzle_choice=selector([
-        ("1 2 3 4 5 6 7 0 8", "Contoh Mudah"), 
-        ("1 2 3 4 0 5 7 8 6", "Contoh Sedang"),
-        ("8 0 6 5 4 7 2 3 1", "Contoh Sulit"),
-        ("1 2 3 4 5 6 8 7 0", "Contoh Unsolvable"),
+        ("1 2 3 4 5 6 7 0 8", "Contoh Mudah - 1 langkah"),
+        ("1 2 3 4 0 5 7 8 6", "Contoh Sedang - 3 langkah"),
+        ("8 0 6 5 4 7 2 3 1", "Contoh Sulit - 20+ langkah"),
+        ("1 2 3 4 5 6 8 7 0", "Contoh Unsolvable - inversi ganjil"),
         ("custom", "Input Manual")
     ], label="Pilih Puzzle:", default="1 2 3 4 5 6 7 0 8"),
-    
-    custom_input=input_box("1 2 3 4 5 6 7 0 8", label="Input Manual (9 angka):", 
-                          type=str, width=50)
+    custom_input=input_box("1 2 3 4 5 6 7 0 8", label="Input Manual (9 angka 0-8):", type=str, width=50)
 ):
-    
-    # Tentukan puzzle yang akan digunakan
-    if puzzle_choice == "custom":
-        puzzle_text = custom_input
-    else:
-        puzzle_text = puzzle_choice
-    
+    puzzle_text = custom_input if puzzle_choice == "custom" else puzzle_choice
     try:
-        # Parse input
-        text = str(puzzle_text).strip()
-        nums = list(map(int, text.split()))
-        
-        # Validasi input
-        if len(nums) != 9:
-            show(html("<div style='color:red; font-weight:bold'>❌"
-                      "Error: Harus ada 9 angka</div>"))
-            return
-            
-        if set(nums) != set(range(9)):
-            show(html("<div style='color:red; font-weight:bold'>❌"
-                      "Error: Harus berisi angka 0-8 tanpa duplikasi</div>"))
-            return
-        
-        # Analisis puzzle
+        nums = list(map(int, str(puzzle_text).strip().split()))
+        if len(nums)!= 9:
+            show(html("<div style='color:#dc2626; font-weight:bold'>❌ Error: Masukkan tepat 9 angka.</div>")); return
+        if set(nums)!= set(range(9)):
+            show(html("<div style='color:#dc2626; font-weight:bold'>❌ Error: Angka harus 0-8 tanpa duplikat.</div>")); return
+
         inv = calculate_inversions(nums)
         solvable = (inv % 2 == 0)
-        
-        # Tampilkan informasi puzzle
-        show(html(f"""
-        <div style='background:#f0f8ff; padding:10px;
-        border-radius:5px; margin:10px 0;'>
-        <b>📊 Analisis Puzzle:</b><br>
-        • <b>Jumlah Inversi:</b> {inv}<br>
-        • <b>Status:</b> {'✅ Dapat Diselesaikan' 
-if solvable else '❌ Tidak Dapat Diselesaikan'}
-        </div>
-        """))
-        
-        # Tampilkan puzzle awal
-        show(html(f"<b>🎯 Puzzle Awal:</b>"))
-        show(html(f"<pre>{display_puzzle(nums)}</pre>"))
-        
-        # Jika solvable, cari solusi
-        if solvable:
-            goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
-            
-            show(html("<div style='color:green; margin:10px 0;'>"
-                     "⚡ Mencari solusi dengan algoritma A*..."
-                     "</div>"))
-            
-            path = a_star(nums, goal)
-            
-            if path:
-                show(html(f"""
-                <div style='background:#e8f5e8; padding:10px;
-                border-radius:5px; margin:10px 0;'>
-                <b>✅ SOLUSI DITEMUKAN!</b><br>
-                • <b>Total Langkah:</b> {len(path)-1}<br>
-                • <b>Waktu:</b> Solusi optimal ditemukan
-                </div>
-                """))
-                
-                # Tampilkan langkah-langkah solusi
-                show(html("<b>🎬 Langkah-langkah Solusi:</b>"))
-                
-                # Untuk efisiensi, batasi tampilan jika terlalu banyak langkah
-                max_display_steps = 10
-                if len(path) <= max_display_steps:
-                    # Tampilkan semua langkah
-                    for i, state in enumerate(path):
-                        status = "🏁 AWAL"\
-                        if i == 0 else "🎉 SOLUSI"\
-                        if i == len(path)-1 else f"🔹 LANGKAH {i}"
-                        show(html(f"<b>{status}:</b>"))
-                        show(html(f"<pre>{display_puzzle(state)}</pre>"))
-                else:
-                    # Tampilkan langkah penting saja
-                    important_steps = [0]  # Awal
-                    if len(path) > 3:
-                        important_steps.append(len(path)//3)
-                    if len(path) > 6:
-                        important_steps.append(2*len(path)//3)
-                    important_steps.append(len(path)-1)  # Akhir
-                    
-                    for i in important_steps:
-                        state = path[i]
-                        if i == 0:
-                            status = "🏁 AWAL"
-                        elif i == len(path)-1:
-                            status = "🎉 SOLUSI"
-                        else:
-                            status = f"🔹 LANGKAH {i} (dari {len(path)-1})"
-                        
-                        show(html(f"<b>{status}:</b>"))
-                        show(html(f"<pre>{display_puzzle(state)}</pre>"))
-                    
-                    show(html(f"<i>... dan {len(path) - len(important_steps)}"
-                              f"langkah lainnya</i>"))
-                        
-            else:
-                show(html("<div style='color:red; font-weight:bold'>"
-                         "❌ Tidak ditemukan solusi meskipun puzzle solvable"
-                         "</div>"))
-        else:
-            show(html("""
-            <div style='background:#ffe8e8; padding:10px;
-            border-radius:5px; margin:10px 0;'>
-            <b>❌ Puzzle Tidak Dapat Diselesaikan</b><br>
-            Puzzle dengan jumlah inversi ganjil mustahil untuk diselesaikan.
-            Coba puzzle lain dengan jumlah inversi genap.
-            </div>
-            """))
-            
-    except ValueError as e:
-        show(html("<div style='color:red; font-weight:bold'>"
-                 f"❌ Error parsing angka: Pastikan input hanya berisi angka 0-8"
-                 "</div>"))
-    except Exception as e:
-        show(html("<div style='color:red; font-weight:bold'>"
-                 f"❌ Error: {str(e)}"
-                 "</div>"))
 
-# Tambahkan penjelasan
-show(html("""
-<div style='background:#fff3cd; padding:15px; border-radius:5px;
-border-left:4px solid #ffc107; margin:20px 0;'>
-<h3>🎯 8-Puzzle Solver Interaktif</h3>
-<p><b>Cara menggunakan:</b></p>
-<ol>
-<li>Pilih puzzle dari dropdown atau gunakan "Input Manual"</li>
-<li>Untuk input manual, masukkan 9 angka (0-8) dipisah spasi</li>
-<li>Program akan menganalisis solvabilitas dan menampilkan solusi</li>
-</ol>
-<p><b>Kriteria Solvabilitas:</b> Puzzle dapat diselesaikan
-jika jumlah inversi <b>GENAP</b></p>
-</div>
-"""))
+        show(html(f"""
+        <div style='background:#f0f9ff; padding:12px 14px; border-radius:10px; border-left:5px solid #0ea5e9; font-family:sans-serif;'>
+        <b>📊 Hasil Analisis:</b><br>
+        • Jumlah Inversi: <b>{inv}</b> ({'Genap' if inv%2==0 else 'Ganjil'})<br>
+        • Status: <b style='color:{"#16a34a" if solvable else "#dc2626"}'>{'✅ SOLVABLE - Dapat diselesaikan' if solvable else '❌ UNSOLVABLE - Tidak dapat diselesaikan'}</b>
+        </div>"""))
+
+        show(html(display_puzzle_html(nums, "🎯 Kondisi Awal")))
+
+        if solvable:
+            goal = [1,2,3,4,5,6,7,8,0]
+            path = a_star(nums, goal)
+            if path:
+                show(html(f"<div style='background:#dcfce7; padding:10px 14px; border-radius:10px; font-family:sans-serif;'><b>✅ Solusi Optimal Ditemukan!</b> Membutuhkan <b>{len(path)-1}</b> langkah.</div>"))
+
+                @interact
+                def show_step(step=slider(0, len(path)-1, 1, 0, label="Geser untuk melihat langkah")):
+                    s = path[step]
+                    if step == 0: label = "🏁 POSISI AWAL"
+                    elif step == len(path)-1: label = "🎉 POSISI GOAL"
+                    else: label = f"🔹 LANGKAH {step} dari {len(path)-1}"
+                    show(html(display_puzzle_html(s, label)))
+        else:
+            show(html("<div style='background:#fee2e2; padding:12px; border-radius:10px; font-family:sans-serif;'><b>Kenapa tidak bisa?</b> Karena jumlah inversi ganjil, tidak ada rangkaian pergeseran yang bisa mencapai goal. Silakan coba puzzle lain.</div>"))
+
+    except Exception as e:
+        show(html(f"<div style='color:red'>Error: {e}</div>"))
 </script>
 </div>
 </div>
