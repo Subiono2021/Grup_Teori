@@ -2899,6 +2899,19 @@ Berikut ini diberikan suatu definisi yang erat kaitannya dengan suatu pasangan t
 </div>
 </div>
 
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>💡 Contoh Pasangan Terurut</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Misalkan \(A=\{1,2\}\) dan \(B=\{3,4\}\). Pasangan terurut \((1,3)\) berbeda dengan \((3,1)\) karena \((1,3)\) memiliki elemen pertama \(1\) dan elemen kedua \(3\), sedangkan \((3,1)\) sebaliknya. Namun, sebagai himpunan biasa, \(\{1,3\}\) sama dengan \(\{3,1\}\). Hal ini menunjukkan bahwa notasi pasangan terurut \((a,b)\) sangat bergantung pada urutan, berbeda dengan notasi himpunan \(\{a,b\}\) yang tidak memperhatikan urutan.
+</p>
+</div>
+</div>
+
 <div class="definition-container">
     <div class="definition-header" onclick="toggleDefinisi(this)">
         <span>2.1.2. Definisi</span>
@@ -2911,6 +2924,27 @@ Diberikan himpunan \(A\) dan \(B\), hasil kali dari \(A\) dan \(B\) ditulis \(A\
 </p>
 </div>
 </center>
+</div>
+
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📝 Contoh Hasil Kali Kartesius</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Diberikan \(A=\{1,2\}\) dan \(B=\{a,b,c\}\). Maka hasil kali kartesiusnya adalah
+\[
+A\times B = \{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)\}.
+\]
+Perhatikan bahwa \( |A\times B| = 2 \times 3 = 6 \). Sedangkan
+\[
+B\times A = \{(a,1),(b,1),(c,1),(a,2),(b,2),(c,2)\}.
+\]
+Terlihat bahwa secara umum \(A\times B \neq B\times A\), karena \((1,a)\in A\times B\) tetapi \((1,a)\notin B\times A\).
+</p>
+</div>
 </div>
 
 <p>
@@ -2958,6 +2992,23 @@ disini '<b>atau</b>' telah digunakan dalam pengertian inklusif. Berikut adalah g
 </p>
 </div>
 </center>
+</div>
+
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📝 Contoh Gabungan</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Misalkan \(A=\{1,2,3\}\) dan \(B=\{3,4,5\}\). Gabungan dari \(A\) dan \(B\) adalah
+\[
+A\cup B = \{1,2,3,4,5\}.
+\]
+Perhatikan bahwa elemen \(3\) yang merupakan anggota irisan hanya ditulis satu kali dalam gabungan, sesuai dengan definisi '<b>atau</b>' inklusif.
+</p>
+</div>
 </div>
 
 <p>
@@ -3011,6 +3062,23 @@ Berikut ini adalah gambar diagram Venn \(A\cap B\) daerah berwarna biru mudah.
 </center>
 </div>
 
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📝 Contoh Irisan</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Dengan menggunakan himpunan yang sama, \(A=\{1,2,3\}\) dan \(B=\{3,4,5\}\), maka irisannya adalah
+\[
+A\cap B = \{3\}.
+\]
+Hanya elemen yang berada di kedua himpunan sekaligus yang termasuk dalam irisan.
+</p>
+</div>
+</div>
+
 <div class="definition-container">
     <div class="definition-header" onclick="toggleDefinisi(this)">
         <span>2.1.5. Definisi</span>
@@ -3058,6 +3126,33 @@ Berikut adalah gambar diagram Venn dari \(A-B\) daerah berwarna biru mudah.
 </p>
 </div>
 </center>
+</div>
+
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📝 Contoh Komplemen Relatif</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Misalkan \(A=\{1,2,3,4\}\) dan \(B=\{3,4,5,6\}\). Maka
+\[
+A-B = \{1,2\}
+\]
+dan
+\[
+B-A = \{5,6\}.
+\]
+Terlihat bahwa \(A-B \neq B-A\) selama \(A\neq B\). Secara intuitif, \(A-B\) adalah anggota yang hanya dimiliki oleh \(A\).
+</p>
+<p>
+Jika semesta pembicaraan \(\mathbb{U}=\{1,2,3,4,5,6\}\) dan \(A=\{2,4,6\}\), maka komplemen dari \(A\) adalah
+\[
+A^c = \mathbb{U} - A = \{1,3,5\}.
+\]
+</p>
+</div>
 </div>
 
 <p>
@@ -3127,6 +3222,27 @@ A\triangle B=(A\cap B^C)\cup(A^C\cap B)=\left\{x\,|\,x\in A\cap B^C\ \mbox{atau}
 </center>
 </div>
 
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📝 Contoh Beda Simetrik</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Diberikan \(A=\{1,2,3\}\) dan \(B=\{3,4,5\}\). Beda simetriknya adalah
+\[
+A\triangle B = (A-B)\cup(B-A) = \{1,2\}\cup\{4,5\} = \{1,2,4,5\}.
+\]
+Kita juga dapat memeriksa bahwa
+\[
+A\triangle B = (A\cup B) - (A\cap B) = \{1,2,3,4,5\} - \{3\} = \{1,2,4,5\}.
+\]
+Hal ini menunjukkan bahwa beda simetrik menghasilkan elemen-elemen yang berada di salah satu himpunan, tetapi tidak di keduanya.
+</p>
+</div>
+</div>
+
 <p>
 Ini menyiratkan dengan jelas, 
 \[
@@ -3182,6 +3298,33 @@ Dengan demikian \(A\times (B\cup C)=(A\times B)\cup(A\times C)\).
 </div>
 </div>
 </div>
+
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>🔍 Verifikasi Teorema 2.1.7. (Bagian 1)</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Untuk memverifikasi sifat distributif bagian (1), misalkan \(A=\{1\}\), \(B=\{1,2\}\), dan \(C=\{2,3\}\). Maka
+\[
+B\cup C = \{1,2,3\}
+\]
+sehingga
+\[
+A\times (B\cup C) = \{1\}\times\{1,2,3\} = \{(1,1),(1,2),(1,3)\}.
+\]
+Di sisi lain,
+\[
+(A\times B)\cup(A\times C) = \{(1,1),(1,2)\} \cup \{(1,2),(1,3)\} = \{(1,1),(1,2),(1,3)\}.
+\]
+Terbukti bahwa \(A\times (B\cup C)=(A\times B)\cup(A\times C)\) untuk contoh ini. Untuk bagian (2) dan (3), dapat dicoba dengan cara yang sama.
+</p>
+</div>
+</div>
+
+
 </section> 
 
 <section class="theorem-section">
@@ -3233,6 +3376,27 @@ Terlihat bahwa \(|A\times B|=|A|.|B|\) \(\qquad\clubsuit\)
 </div>
 </div>
 </div>
+
+<div class="example-container">
+    <div class="example-header"
+         onclick="this.parentElement.classList.toggle('active')">
+        <span><b>🧮 Contoh Perhitungan Kardinalitas</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+<div class="example-box">
+<p>
+Misalkan \(A=\{1,2\}\) dan \(B=\{2,3,4\}\). Maka:
+</p>
+<ol>
+    <li> \(A\cup B = \{1,2,3,4\}\) sehingga \(|A\cup B|=4\). Dengan rumus, \(|A|+|B|-|A\cap B| = 2+3-|\{2\}| = 5-1 = 4\) (sesuai).</li>
+    <li> \(A\times B = \{(1,2),(1,3),(1,4),(2,2),(2,3),(2,4)\}\) sehingga \(|A\times B|=6 = |A|\cdot |B| = 2\cdot 3 = 6\) (sesuai).</li>
+</ol>
+<p>
+Catatan khusus: Jika \(A\) dan \(B\) saling lepas (\(A\cap B=\emptyset\)), maka \(|A\cup B| = |A|+|B|\).
+</p>
+</div>
+</div>
+
 </section>
 
 <div class="example-container">
@@ -3287,6 +3451,28 @@ A=\left\{(a,b)\in\mathbb{P}^{2}\mid a < b \right\}.
     </div>
 <div class="subsection-content">
 
+
+<div class="intro-text" style="margin-bottom:20px;">
+<p>
+Konsep <b>relasi</b> merupakan salah satu fondasi paling penting dalam matematika. Secara intuitif, relasi menggambarkan hubungan antara dua objek. Misalnya, kita sering mengatakan "3 lebih kecil dari 5", "8 habis dibagi 4", atau "dua segitiga sebangun" semua itu adalah contoh relasi. Dalam teori himpunan, relasi didefinisikan secara formal sebagai himpunan bagian dari hasil kali Kartesius, sehingga memungkinkan kita untuk memperlakukan hubungan secara matematis dengan tepat.
+</p>
+<p>
+Dalam <b>teori grup</b>, relasi memainkan peran yang sangat vital. Sebuah grup <i>G</i> dilengkapi dengan operasi biner, tetapi kita juga sering membahas relasi-relasi khusus pada elemen-elemennya, seperti:
+</p>
+<ul style="text-align:justify">
+    <li><b>Relasi kesamaan</b> (\(a = b\)) yang merupakan relasi ekivalen paling dasar.</li>
+    <li><b>Relasi konjugasi</b> (\(a \sim b\) jika ada \(g \in G\) sehingga \(b = g a g^{-1}\)) relasi ini membagi grup ke dalam kelas-kelas konjugasi, yang sangat berguna dalam analisis struktur grup.</li>
+    <li><b>Relasi keterbandingan</b> dalam grup terurut, atau relasi <b>kongruensi modulo subgrup normal</b> yang melahirkan grup faktor.</li>
+</ul>
+<p>
+Selain itu, <b>homomorfisme grup</b> adalah fungsi yang mempertahankan operasi, dan kernelnya mendefinisikan relasi ekivalen yang disebut <i>kongruensi</i>. Dengan demikian, pemahaman tentang relasi bukan hanya alat untuk menghubungkan elemen, tetapi juga jembatan menuju konsep-konsep abstrak seperti <b>grup kuosien</b>, <b>teorema isomorfisma</b>, dan <b>aksi grup</b>.
+</p>
+<p>
+Oleh karena itu, sebelum melangkah lebih jauh, mari kita kuasai definisi formal dan berbagai macam relasi yang sering muncul, disertai contoh-contoh konkret.
+</p>
+</div>
+
+
 <div class="definition-container">
     <div class="definition-header" onclick="toggleDefinisi(this)">
         <span>2.2.1. Definisi</span>
@@ -3324,6 +3510,45 @@ Diberikan \(T\) himpunan titik dan \(G\) himpunan garis di bidang. Didefinisikan
 Diberikan himpunan \(X = \{a, b, c\}\). Himpunan \({\cal{R}} = \{(a, b), (b, a), (a, c)\}\subset X^{2}\) adalah suatu relasi pada \(X\). &emsp; ✍️
 </p>
 </div>
+</div>
+
+<!-- Contoh tambahan untuk relasi -->
+<div class="example-container">
+    <div class="example-header" onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📎 Contoh Tambahan Relasi</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+    <div class="example-box">
+        <p>
+        <b>a. Relasi "kurang dari" pada \(\mathbb{R}\)</b><br>
+        Definisi \(x\,\mathcal{R}\,y\) jika dan hanya jika \(x < y\). Himpunan \(\mathcal{R} = \{(x,y) \in \mathbb{R}^2 \mid x < y\}\) adalah relasi pada \(\mathbb{R}\). Relasi ini bersifat <i>transitif</i> (jika \(x < y\) dan \(y < z\) maka \(x < z\)), tetapi tidak <i>refleksif</i> (karena \(x < x\) tidak pernah benar) dan tidak <i>simetris</i> (karena \(x < y\) tidak mengakibatkan \(y < x\)).
+        </p>
+        <p>
+        <b>b. Relasi "membagi" pada himpunan bilangan bulat positif \(\mathbb{Z}^+\)</b><br>
+        Didefinisikan \(a\,\mathcal{R}\,b\) jika \(a\) membagi \(b\) (ditulis \(a \mid b\)). Relasi ini <i>refleksif</i> (setiap bilangan membagi dirinya sendiri), <i>antisimetris</i> (jika \(a\mid b\) dan \(b\mid a\) maka \(a=b\)), dan <i>transitif</i> (jika \(a\mid b\) dan \(b\mid c\) maka \(a\mid c\)). Relasi seperti ini disebut <b>urutan parsial</b>.
+        </p>
+        <p>
+        <b>c. Relasi kongruensi modulo \(n\) pada \(\mathbb{Z}\)</b><br>
+        Untuk suatu bilangan bulat \(n>0\), definisikan \(a\,\mathcal{R}\,b\) jika \(n \mid (a-b)\), atau dengan kata lain \(a \equiv b \pmod{n}\). Relasi ini adalah <b>relasi ekivalen</b> karena memenuhi sifat <i>refleksif</i>, <i>simetris</i>, dan <i>transitif</i>. Kelas-kelas ekivalennya adalah himpunan bilangan bulat yang bersisa sama jika dibagi \(n\), yang membentuk grup siklik \(\mathbb{Z}_n\).
+        </p>
+        <p>
+        <b>d. Relasi konjugasi dalam grup</b><br>
+        Misalkan \(G\) adalah suatu grup. Untuk \(a,b \in G\), kita katakan \(a\) konjugat dengan \(b\) (ditulis \(a \sim b\)) jika terdapat \(g \in G\) sedemikian sehingga \(b = g a g^{-1}\). Relasi ini merupakan relasi ekivalen pada \(G\). Dalam grup simetri \(S_3\), elemen-elemen dengan struktur siklus yang sama berada dalam satu kelas konjugasi. Relasi ini sangat penting dalam mempelajari representasi grup dan teorema kelas konjugasi.
+        </p>
+        <p>
+        <b>e. Relasi "sebangun" pada himpunan segitiga</b><br>
+        Dalam geometri, dua segitiga dikatakan sebangun jika sudut-sudut yang bersesuaian sama besar. Ini adalah relasi ekivalen pada himpunan semua segitiga. Konsep ini memperlihatkan bahwa relasi ekivalen muncul secara alami dalam berbagai cabang matematika.
+        </p>
+        <p style="margin-top:10px; color:#2c3e50;">
+        Dengan memahami berbagai jenis relasi ini, pembaca akan lebih siap menghadapi definisi-definisi abstrak seperti <i>relasi ekivalen</i>, <i>urutan parsial</i>, dan <i>relasi fungsi</i> yang akan muncul di bagian selanjutnya.
+        </p>
+    </div>
+</div>
+
+<div style="background:#f9f9f9; padding:10px 20px; border-left:5px solid #2980b9; margin:20px 0;">
+<p>
+<b>🔗 Kaitannya dengan Teori Grup:</b> Dalam teori grup, relasi ekivalen yang <i>kompatibel dengan operasi grup</i> (yaitu jika \(a \sim b\) dan \(c \sim d\) maka \(ac \sim bd\)) disebut <b>kongruensi</b>. Kongruensi memungkinkan kita membentuk <i>grup faktor</i> \(G/\sim\), yang merupakan salah satu alat paling ampuh dalam aljabar abstrak. Relasi konjugasi, meskipun bukan kongruensi (karena tidak selalu kompatibel dengan perkalian), memberikan informasi tentang struktur internal grup melalui <i>pusat</i> dan <i>kelas konjugasi</i>.
+</p>
 </div>
 
 <p>
@@ -3591,6 +3816,96 @@ Relasi \(\cal{R}\) pada \(\mathbb{N}\) didefinisikan oleh: \(a{\cal{R}}b\) bila 
 </div>
 </div>
 
+<div style="background:#f0f8ff; padding:15px 20px; border-left:6px solid #2980b9; margin:20px 0;">
+    <p style="font-size:18px; line-height:1.8;">
+        <b>🌐 Mengapa Relasi Ekivalen Penting?</b> <br>
+        Relasi ekivalen adalah alat untuk <b>mengelompokkan</b> elemen-elemen suatu himpunan berdasarkan sifat atau kriteria tertentu. Setiap relasi ekivalen membagi himpunan menjadi <i>kelas-kelas ekivalen</i> yang saling lepas dan gabungannya membentuk seluruh himpunan. Ini disebut <b>partisi</b>.
+        Dalam teori grup, relasi ekivalen yang kompatibel dengan operasi grup (disebut <b>kongruensi</b>) memungkinkan kita membentuk <i>grup faktor</i>  salah satu konsep sentral dalam aljabar abstrak. Contoh penting adalah <i>kongruensi modulo subgrup normal</i>, yang menghasilkan grup kuosien.
+    </p>
+</div>
+
+<div class="example-container">
+    <div class="example-header" onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📎 Contoh Relasi Ekivalen Lainnya</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+    <div class="example-box">
+
+        <p><b>a. Kongruensi modulo \(n\) pada \(\mathbb{Z}\)</b><br>
+        Untuk \(n\) bilangan bulat positif, definisikan \(a\,\mathcal{R}\,b\) jika \(n \mid (a-b)\) (ditulis \(a \equiv b \pmod n\)). Relasi ini adalah relasi ekivalen:
+        <ul>
+            <li><i>Refleksif</i>: \(n \mid (a-a)=0\) selalu benar.</li>
+            <li><i>Simetris</i>: jika \(n \mid (a-b)\), maka \(n \mid (b-a)\).</li>
+            <li><i>Transitif</i>: jika \(n \mid (a-b)\) dan \(n \mid (b-c)\), maka \(n \mid (a-c)\).</li>
+        </ul>
+        Kelas ekivalennya adalah himpunan semua bilangan bulat yang bersisa sama jika dibagi \(n\), yaitu \(\bar{0}, \bar{1}, \dots, \overline{n-1}\). Himpunan semua kelas ini membentuk grup siklik \(\mathbb{Z}_n\) di bawah penjumlahan modulo \(n\).
+        </p>
+
+        <p><b>b. Relasi "kesamaan panjang" pada himpunan kata</b><br>
+        Misalkan \(S\) adalah himpunan semua kata (string) atas alfabet tertentu. Definisikan \(u\,\mathcal{R}\,v\) jika panjang \(u\) sama dengan panjang \(v\). Relasi ini ekivalen. Kelas ekivalennya adalah kata-kata dengan panjang tertentu. Dalam teori bahasa formal, relasi ini digunakan untuk mendefinisikan <i>bahasa</i> berdasarkan panjang kata.
+        </p>
+
+        <p><b>c. Relasi "sebangun" pada himpunan segitiga</b><br>
+        Dalam geometri, dua segitiga dikatakan sebangun jika sudut-sudut yang bersesuaian sama besar. Relasi ini ekivalen:
+        <ul>
+            <li><i>Refleksif</i>: setiap segitiga sebangun dengan dirinya sendiri.</li>
+            <li><i>Simetris</i>: jika segitiga \(T_1\) sebangun dengan \(T_2\), maka \(T_2\) sebangun dengan \(T_1\).</li>
+            <li><i>Transitif</i>: jika \(T_1 \sim T_2\) dan \(T_2 \sim T_3\), maka \(T_1 \sim T_3\).</li>
+        </ul>
+        Kelas ekivalennya adalah himpunan semua segitiga yang memiliki bentuk yang sama (hanya berbeda skala).
+        </p>
+
+        <p><b>d. Relasi konjugasi dalam grup</b><br>
+        Misalkan \(G\) adalah suatu grup. Untuk \(a,b \in G\), definisikan \(a \sim b\) jika terdapat \(g \in G\) sedemikian sehingga \(b = g a g^{-1}\). Relasi ini adalah relasi ekivalen (silakan buktikan sebagai latihan). Kelas-kelas ekivalennya disebut <i>kelas konjugasi</i>. Dalam grup simetri \(S_3\), ada tiga kelas konjugasi yang bersesuaian dengan tipe siklus: identitas, transposisi, dan 3-siklus. Relasi konjugasi sangat penting dalam teori representasi dan analisis struktur grup.
+        </p>
+
+        <p><b>e. Relasi ekivalen pada \(\mathbb{Z}^2\) (titik-titik pada bidang)</b><br>
+        Definisikan \((x_1,y_1) \sim (x_2,y_2)\) jika \(x_1+y_1 = x_2+y_2\). Relasi ini ekivalen. Kelas ekivalennya adalah semua titik yang terletak pada garis lurus \(x+y = k\) untuk suatu bilangan bulat \(k\). Relasi ini mempartisi bidang menjadi garis-garis sejajar dengan kemiringan \(-1\).
+        </p>
+
+    </div>
+</div>
+
+<div style="background:#fef9e7; padding:15px 20px; border-left:6px solid #f39c12; margin:20px 0;">
+    <p>
+        <b>📌 Catatan Penting tentang Kelas Ekivalen</b><br>
+        Jika \(\sim\) adalah relasi ekivalen pada himpunan \(A\), maka untuk setiap \(a \in A\), kelas ekivalen \([a]_{\sim}\) adalah himpunan semua elemen yang berelasi dengan \(a\). Dua kelas ekivalen <i>sama</i> jika elemen-elemennya saling berelasi; jika tidak, mereka <i>saling lepas</i> (disjoint). Gabungan semua kelas ekivalen adalah \(A\) sendiri. Dengan kata lain, kelas-kelas ekivalen membentuk sebuah <b>partisi</b> dari \(A\).
+    </p>
+    <p>
+        Sebaliknya, setiap partisi dari \(A\) menghasilkan suatu relasi ekivalen dengan mendefinisikan \(a \sim b\) jika \(a\) dan \(b\) berada dalam blok yang sama. Jadi, <b>relasi ekivalen ↔ partisi</b> adalah korespondensi satu-satu.
+    </p>
+    <p>
+        Dalam <b>teori grup</b>, jika \(N\) adalah subgrup normal dari \(G\), maka relasi \(a \sim b\) jika \(a^{-1}b \in N\) adalah relasi ekivalen. Kelas ekivalennya adalah <i>koset kiri</i> dari \(N\). Himpunan semua koset ini membentuk grup faktor \(G/N\), yang merupakan salah satu konstruksi paling fundamental dalam aljabar.
+    </p>
+</div>
+
+<div class="example-container">
+    <div class="example-header" onclick="this.parentElement.classList.toggle('active')">
+        <span><b>🧮 Contoh Perhitungan Kelas Ekivalen</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+    <div class="example-box">
+        <p>
+        Misalkan \(A = \{1,2,3,4,5,6\}\) dan relasi \(\sim\) didefinisikan oleh \(a \sim b\) jika \(a \equiv b \pmod{3}\). Maka kelas-kelas ekivalennya adalah:
+        </p>
+        <ul>
+            <li>\([1] = \{1,4\}\)</li>
+            <li>\([2] = \{2,5\}\)</li>
+            <li>\([3] = \{3,6\}\)</li>
+        </ul>
+        <p>
+        Ketiga kelas ini saling lepas dan gabungannya adalah \(A\). Jadi partisi dari \(A\) adalah \(\{\{1,4\}, \{2,5\}, \{3,6\}\}\).
+        </p>
+        <p>
+        Sekarang perhatikan himpunan \(\mathbb{Z}_6\) (bilangan bulat modulo 6) dan subgrup normal \(N = \{0,3\}\). Koset-koset dari \(N\) adalah:
+        \[
+        0+N = \{0,3\},\quad 1+N = \{1,4\},\quad 2+N = \{2,5\}.
+        \]
+        Ini adalah kelas ekivalen dari relasi \(a \sim b\) jika \(a-b \in N\). Grup faktor \(\mathbb{Z}_6/N\) memiliki tiga elemen dan isomorfik dengan \(\mathbb{Z}_3\).
+        </p>
+    </div>
+</div>
+
 </div> <!--Akhir Content Subsection-->
 </div> <!--Akhir <div class="subsection">-->
 
@@ -3706,6 +4021,57 @@ Untuk setiap bilangan bulat \(a\) dan \(b\), bila \(a\in A_i\) dan \(b\in A_i\) 
 </div>
 </div>
 
+<!-- Narasi tambahan tentang partisi dan relasi ekivalen -->
+<div style="background:#f0f8ff; padding:15px 20px; border-left:6px solid #2980b9; margin:20px 0;">
+    <p style="font-size:18px; line-height:1.8;">
+        <b>🔗 Partisi dan Relasi Ekivalen adalah Dua Sisi Mata Uang yang Sama</b><br>
+        Teorema 2.4.3 di atas menunjukkan bahwa setiap partisi menghasilkan relasi ekivalen, dan sebaliknya, setiap relasi ekivalen menghasilkan partisi (himpunan kelas-kelas ekivalennya). 
+        Dengan kata lain, memberikan suatu partisi pada himpunan <i>A</i> sama saja dengan memberikan suatu relasi ekivalen pada <i>A</i>. 
+        Korespondensi ini sangat berguna karena kita dapat beralih antara sudut pandang “pengelompokan” (partisi) dan sudut pandang “hubungan” (relasi) sesuai dengan kebutuhan.
+    </p>
+    <p>
+        Dalam teori grup, partisi yang timbul dari koset-koset suatu subgrup (misalnya koset kiri dari subgrup <i>H</i>) tidak selalu menghasilkan relasi ekivalen yang kompatibel dengan operasi grup, kecuali jika <i>H</i> adalah subgrup normal. 
+        Namun, partisi dari subgrup normal menghasilkan <b>grup faktor</b> sebuah struktur aljabar baru yang sangat penting.
+    </p>
+</div>
+
+<div class="example-container">
+    <div class="example-header" onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📎 Contoh Partisi Lainnya</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+    <div class="example-box">
+
+        <p><b>a. Partisi berdasarkan sisa pembagian</b><br>
+        Untuk bilangan bulat positif <i>n</i>, himpunan semua kelas residu modulo <i>n</i> yaitu \(\{\bar{0}, \bar{1}, \ldots, \overline{n-1}\}\) membentuk partisi dari \(\mathbb{Z}\). Setiap kelas residu berisi bilangan-bilangan yang bersisa sama jika dibagi <i>n</i>.</p>
+
+        <p><b>b. Partisi himpunan semua fungsi dari \(\mathbb{R}\) ke \(\mathbb{R}\)</b><br>
+        Definisikan dua fungsi <i>f</i> dan <i>g</i> berada dalam blok yang sama jika nilai turunan mereka di titik 0 sama. Ini adalah partisi berdasarkan nilai turunan di 0. Relasi ekivalen yang bersesuaian adalah \(f \sim g\) jika \(f'(0)=g'(0)\).</p>
+
+        <p><b>c. Partisi himpunan semua segitiga</b><br>
+        Segitiga dapat dipartisi berdasarkan luas, keliling, atau jenis (sama sisi, sama kaki, sembarang). Misalnya, partisi berdasarkan jenis menghasilkan tiga blok: segitiga sama sisi, segitiga sama kaki (tetapi tidak sama sisi), dan segitiga sembarang. Relasi ekivalennya adalah "sejenis".</p>
+
+        <p><b>d. Partisi dari \(\mathbb{R}\) menjadi interval-interval \([n, n+1)\)</b><br>
+        Seperti telah disebutkan dalam Contoh 2.4.2, koleksi \(\{[n, n+1) \mid n \in \mathbb{Z}\}\) adalah partisi dari \(\mathbb{R}\). Relasi ekivalen yang dihasilkan adalah \(x \sim y\) jika dan hanya jika \(\lfloor x \rfloor = \lfloor y \rfloor\) (bagian bulat sama).</p>
+
+    </div>
+</div>
+
+<!-- Narasi sebelum definisi relasi urutan -->
+<div style="background:#fef9e7; padding:15px 20px; border-left:6px solid #f39c12; margin:20px 0;">
+    <p>
+        <b>📌 Relasi Urutan: Membandingkan Elemen</b><br>
+        Setelah mempelajari relasi ekivalen yang mengelompokkan elemen-elemen yang “setara”, kini kita beralih ke jenis relasi lain yang sangat umum: <b>relasi urutan</b>. 
+        Relasi urutan memungkinkan kita membandingkan elemen-elemen, misalnya “lebih kecil atau sama dengan” pada bilangan, atau “himpunan bagian” pada koleksi himpunan. 
+        Sifat-sifat yang harus dipenuhi adalah <b>refleksif</b>, <b>antisimetris</b>, dan <b>transitif</b>. 
+        Perhatikan bahwa relasi urutan <i>tidak</i> mengharuskan setiap pasangan elemen dapat dibandingkan; jika setiap pasang dapat dibandingkan, maka relasi tersebut disebut <b>urutan total</b> (atau linear).
+    </p>
+    <p>
+        Contoh klasik urutan parsial (tetapi bukan total) adalah relasi himpunan bagian (\(\subseteq\)) pada himpunan kuasa \(\mathcal{P}(A)\) untuk \(|A| \ge 2\), karena ada dua himpunan bagian yang tidak saling termuat (misalnya \(\{1\}\) dan \(\{2\}\)). 
+        Relasi “membagi” pada bilangan bulat positif juga merupakan urutan parsial, karena ada pasangan bilangan seperti 2 dan 3 yang tidak saling membagi.
+    </p>
+</div>
+
 <div class="definition-container">
     <div class="definition-header" onclick="toggleDefinisi(this)">
         <span>2.4.5. Relasi Urutan</span>
@@ -3719,6 +4085,29 @@ Suatu relasi \(\cal{R}\) pada suatu himpunan \(A\) dinamakan  <b>terurut parsial
 </div>
 </center>
 </div>
+
+<div class="example-container">
+    <div class="example-header" onclick="this.parentElement.classList.toggle('active')">
+        <span><b>📎 Contoh Relasi Urutan Lainnya</b></span>
+        <span class="example-arrow">▼</span>
+    </div>
+    <div class="example-box">
+
+        <p><b>a. Urutan leksikografis (kamus) pada himpunan kata</b><br>
+        Misalkan \(S\) adalah himpunan semua kata atas alfabet yang terurut (misalnya a < b < c < ...). Definisikan \(u \preceq v\) jika \(u\) muncul sebelum atau sama dengan \(v\) dalam urutan kamus. Relasi ini adalah urutan total pada \(S\).</p>
+
+        <p><b>b. Urutan berdasarkan panjang kata</b><br>
+        Pada himpunan kata, definisikan \(u \preceq v\) jika panjang \(u \le\) panjang \(v\). Relasi ini refleksif, antisimetris (karena jika panjang sama maka katanya sama, hanya jika kita anggap kata unik), dan transitif. Namun, ini bukan urutan total karena ada dua kata berbeda dengan panjang yang sama tetapi tidak dapat dibandingkan (misalnya "cat" dan "dog" sama panjang, tetapi tidak ada yang "lebih pendek"). Jadi ini urutan parsial.</p>
+
+        <p><b>c. Urutan divisibilitas pada \(\mathbb{N}\)</b><br>
+        \(a \preceq b\) jika \(a \mid b\). Relasi ini refleksif (\(a\mid a\)), antisimetris (jika \(a\mid b\) dan \(b\mid a\) maka \(a=b\)), dan transitif (jika \(a\mid b\) dan \(b\mid c\) maka \(a\mid c\)). Ini adalah urutan parsial, dan bukan total karena ada bilangan yang tidak saling membagi (misal 2 dan 3).</p>
+
+        <p><b>d. Urutan inklusi pada \(\mathcal{P}(A)\)</b><br>
+        Untuk sebarang himpunan \(A\), relasi \(\subseteq\) adalah urutan parsial. Jika \(|A|=1\), maka urutan ini menjadi total; jika \(|A|\ge 2\), maka ada himpunan bagian yang tidak dapat dibandingkan, sehingga hanya parsial.</p>
+
+    </div>
+</div>
+
 
 <p>
 Relasi berikut ini : \(\leq\) pada \(\mathbb{N}, \mathbb{Z}\) dan \(\mathbb{R}\) adalah <b>terurut parsial</b>. Juga, \(\subseteq\) pada \(\mathcal{P}(A)\) untuk sebarang himpunan \(A\) dan "pembagian" pada \(\mathbb{N}\).
@@ -3971,6 +4360,36 @@ Tentukan apakah relasi \({\cal{R}}\) berikut adalah relasi ekivalen pada himpuna
 3. \(a{\cal{R}}b\) di \(\mathbb{R}\) bila \(|a-b|\leq 9\)<br>
 4. \(m{\cal{R}}n\) di \(\mathbb{Z}\) bila \(m \equiv n \pmod n.\)
 </p>
+
+<!-- Soal latihan tambahan -->
+<h3 style="margin-top:30px;"><b>&emsp;Latihan Tambahan:</b></h3>
+
+<ol style='margin-left:55px;margin-right:55px;text-align: justify;font-size:14pt' start="5">
+
+<li> Diberikan himpunan \(A = \{1,2,3,4,5\}\). Buatlah suatu partisi dari \(A\) yang memiliki tepat 3 blok, dan tuliskan relasi ekivalen yang bersesuaian dengan partisi tersebut. Tentukan kelas-kelas ekivalennya.</li>
+
+<li> Misalkan \(\sim\) adalah relasi pada \(\mathbb{Z}\) yang didefinisikan oleh \(a \sim b\) jika \(a^2 = b^2\). Tunjukkan bahwa \(\sim\) adalah relasi ekivalen. Uraikan partisi dari \(\mathbb{Z}\) yang dihasilkan.</li>
+
+<li> Pada himpunan \(\mathbb{R}^2\) (bidang koordinat), definisikan \((x_1,y_1) \sim (x_2,y_2)\) jika \(x_1 + y_1 = x_2 + y_2\). Perlihatkan bahwa ini relasi ekivalen. Gambarkan secara geometris kelas-kelas ekivalennya (dalam bentuk garis-garis).</li>
+
+<li> Selidiki apakah relasi \(R\) pada \(\mathbb{R}\) yang didefinisikan oleh \(x\,R\,y\) jika \(x \le y\) dan \(x+y \ge 0\) merupakan relasi urutan parsial? Berikan alasan.</li>
+
+<li> Diberikan himpunan \(X = \{a,b,c,d\}\). Relasi \(R\) pada \(X\) didefinisikan sebagai berikut:
+    \[
+    R = \{(a,a),(b,b),(c,c),(d,d),(a,b),(a,c),(b,d),(c,d)\}.
+    \]
+    Periksa apakah \(R\) adalah relasi urutan parsial. Jika ya, gambarkan diagram Hasse-nya. Apakah ini urutan total?</li>
+
+<li> Misalkan \(\mathcal{P}(\{1,2,3\})\) adalah himpunan kuasa dari \(\{1,2,3\}\). Definisikan relasi \(\preceq\) sebagai \(A \preceq B\) jika \(A \subseteq B\). Tuliskan semua pasangan dalam relasi ini, lalu tentukan apakah relasi tersebut merupakan urutan total atau parsial. Sebutkan semua rantai (chain) maksimal dalam urutan ini.</li>
+
+<li> (Teori Grup) Misalkan \(G\) adalah suatu grup dan \(H\) adalah subgrup dari \(G\). Definisikan relasi \(\sim\) pada \(G\) dengan \(a \sim b\) jika \(a^{-1}b \in H\). Buktikan bahwa \(\sim\) adalah relasi ekivalen, dan kelas ekivalen dari \(a\) adalah koset kiri \(aH\). Jika \(H\) adalah subgrup normal, tunjukkan bahwa relasi ini juga kompatibel dengan operasi grup (yaitu jika \(a\sim b\) dan \(c\sim d\) maka \(ac\sim bd\)).</li>
+
+</ol>
+
+<p style="margin-top:20px; font-style:italic;">
+    Beberapa soal di atas dapat diselesaikan dengan bantuan Sel SageMath untuk memverifikasi perhitungan himpunan dan relasi.
+</p>
+
 
 <div class="sage-cell-container">
 <div class="sage-cell-header">
@@ -4867,6 +5286,84 @@ adalah suatu fungsi.</li>
 </ol>
 </div>
 </div>
+
+<!-- Narasi penutup tentang fungsi dalam matematika -->
+<div style="background:#f0f8ff; padding:15px 20px; border-left:6px solid #2980b9; margin:20px 0;">
+    <p style="font-size:18px; line-height:1.8;">
+        <b>🔑 Fungsi sebagai Tulang Punggung Matematika</b><br>
+        Konsep fungsi (pemetaan) adalah salah satu ide paling fundamental dalam semua cabang matematika. 
+        Dalam <b>teori grup</b>, homomorfisme grup adalah fungsi yang mempertahankan operasi, dan mempelajari sifat-sifatnya (injektif, surjektif, bijektif) membawa kita pada teorema isomorfisma yang sangat kuat. 
+        Fungsi juga menjadi dasar bagi kalkulus, analisis, aljabar linear, topologi, dan hampir semua bidang lainnya.
+    </p>
+    <p>
+        Latihan-latihan berikut dirancang untuk mengasah pemahaman Anda tentang definisi fungsi, komposisi, sifat-sifat injektif/surjektif/bijektif, serta kapan suatu relasi <i>tidak terdefinisi dengan baik</i>.
+        Kerjakan dengan teliti, dan jangan ragu menggunakan Sel SageMath untuk memverifikasi jawaban Anda.
+    </p>
+</div>
+
+<!-- Latihan tambahan -->
+<h3 style="margin-top:30px;"><b>&emsp;Latihan Tambahan (Fungsi & Pemetaan):</b></h3>
+
+<ol style='margin-left:55px;margin-right:55px;text-align: justify;font-size:14pt' start="6">
+
+<li> Periksa apakah relasi berikut merupakan suatu fungsi dari \(A\) ke \(B\). Jika bukan, berikan alasannya.
+    <br>a) \(A = \mathbb{R}, B = \mathbb{R}\), \(f = \{(x,y) \mid y^2 = x\}\).
+    <br>b) \(A = \mathbb{Z}, B = \mathbb{Z}\), \(f = \{(x,y) \mid y = x^2 - 3x + 2\}\).
+    <br>c) \(A = \mathbb{Q}, B = \mathbb{Q}\), \(f\left(\frac{p}{q}\right) = p+q\) (dengan \(p,q\) bilangan bulat, \(q\neq 0\)).
+</li>
+
+<li> Diberikan himpunan \(A = \{1,2,3,4\}\). Ada berapa banyak fungsi berbeda dari \(A\) ke \(A\)? Ada berapa banyak yang bersifat <i>injektif</i>? Ada berapa banyak yang <i>bijektif</i>? (Petunjuk: gunakan prinsip perkalian).</li>
+
+<li> Misalkan \(f : \mathbb{R} \to \mathbb{R}\) didefinisikan oleh \(f(x) = 2x+1\) dan \(g : \mathbb{R} \to \mathbb{R}\) oleh \(g(x) = x^2 - 3\). Tentukan rumus untuk:
+    <br>a) \((f \circ g)(x)\)
+    <br>b) \((g \circ f)(x)\)
+    <br>c) \((f \circ f)(x)\)
+    <br>d) \((g \circ g)(x)\)
+    <br>Apakah \(f \circ g = g \circ f\)? Mengapa?
+</li>
+
+<li> Selidiki apakah fungsi \(f : \mathbb{R} \to \mathbb{R}\) yang diberikan oleh \(f(x) = x^3 - x\) adalah <i>injektif</i>? <i>surjektif</i>? <i>bijektif</i>? Tentukan range (image) dari \(f\).</li>
+
+<li> Diberikan \(f : \mathbb{Z} \to \mathbb{Z}\) dengan \(f(n) = n^2\). Tunjukkan bahwa \(f\) tidak injektif dan tidak surjektif. Tentukan \(f^{-1}(\{4,9,16\})\) (preimage dari himpunan tersebut).</li>
+
+<li> Misalkan \(A = \{a,b,c\}\) dan \(B = \{1,2\}\). Tentukan semua fungsi dari \(A\) ke \(B\). Manakah yang injektif? Manakah yang surjektif? Manakah yang bijektif?</li>
+
+<li> Diberikan \(f : \mathbb{R} \to \mathbb{R}\) dengan \(f(x) = \frac{3x-1}{x+2}\) (domain: \(\mathbb{R} \setminus \{-2\}\)). Apakah \(f\) injektif? Apakah surjektif? Tentukan inversnya jika ada.</li>
+
+<li> (Konsep <i>well-defined</i>) Misalkan kita mendefinisikan suatu "fungsi" \(F : \mathbb{Z}_6 \to \mathbb{Z}_3\) dengan aturan \(F([x]_6) = [2x]_3\). Periksa apakah \(F\) terdefinisi dengan baik. Jika ya, tentukan nilai \(F([0]_6), F([1]_6), \ldots, F([5]_6)\). Jika tidak, berikan contoh dua representasi berbeda dari kelas yang sama yang menghasilkan nilai berbeda.</li>
+
+<li> Misalkan \(f : A \to B\) dan \(g : B \to C\) adalah dua fungsi. Buktikan bahwa:
+    <br>a) Jika \(f\) dan \(g\) injektif, maka \(g \circ f\) injektif.
+    <br>b) Jika \(f\) dan \(g\) surjektif, maka \(g \circ f\) surjektif.
+    <br>c) Jika \(g \circ f\) injektif, apakah \(f\) harus injektif? Berikan contoh atau kontracontoh.
+    <br>d) Jika \(g \circ f\) surjektif, apakah \(g\) harus surjektif? Berikan contoh atau kontracontoh.
+</li>
+
+<li> (Aplikasi dalam teori grup) Misalkan \(G\) dan \(H\) adalah grup dan \(\varphi : G \to H\) adalah suatu homomorfisme grup (yaitu \(\varphi(ab) = \varphi(a)\varphi(b)\) untuk semua \(a,b \in G\)). Tunjukkan bahwa:
+    <br>a) \(\varphi(e_G) = e_H\) (elemen identitas dipetakan ke identitas).
+    <br>b) \(\varphi(a^{-1}) = (\varphi(a))^{-1}\) untuk setiap \(a \in G\).
+    <br>c) Kernel dari \(\varphi\), yaitu \(\ker \varphi = \{g \in G \mid \varphi(g) = e_H\}\), adalah subgrup dari \(G\).
+    <br>d) Jika \(\varphi\) bijektif, maka inversnya \(\varphi^{-1}\) juga merupakan homomorfisme grup (sehingga \(\varphi\) adalah isomorfisme).
+</li>
+
+</ol>
+
+<p style="margin-top:20px; font-style:italic;">
+    Gunakan Sel SageMath di bawah untuk eksplorasi dan verifikasi jawaban Anda. Selamat berlatih!
+</p>
+
+
+<div class="sage-cell-container">
+<div class="sage-cell-header">
+<span><i class="fas fa-calculator"></i>Sel SageMath Untuk Latihan!</span>
+</div>
+<div class="sage-cell-content">
+<script type="text/x-sage">
+# Silahkan sel ini digunakan untuk latihan!
+
+</script>
+</div>
+</div
 
 </div> <!--Akhir Content Subsection-->
 </div> <!--Akhir <div class="subsection">-->
