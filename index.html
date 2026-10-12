@@ -17441,6 +17441,261 @@ Kelas ekivalen dari 3: \([3] = \{3, -3\}\)
 <b>Jawab:</b><br>
 \(R = \{(1,1),(1,2),(2,1),(2,2),(3,3),(4,4),(4,5),(5,4),(5,5)\}\)
 </li>
+<li>
+Diberikan himpunan matriks
+
+\[ 
+M_{2\times2}(\mathbb Z_3) = \left\{ \begin{pmatrix} a&b\\ c&d \end{pmatrix} \;\middle|\; a,b,c,d\in\mathbb Z_3 \right\}, \]
+
+dengan \(\mathbb Z_3=\{0,1,2\}\).
+
+Relasi \(R\) didefinisikan pada himpunan tersebut sebagai berikut. Untuk setiap \(A,B\in M_{2\times2}(\mathbb Z_3)\),
+
+\[ A\,R\,B\iff a_{11}=b_{11}. \]
+
+Artinya, dua matriks berelasi jika dan hanya jika entri pada baris pertama dan kolom pertama (entri kiri atas) kedua matriks sama.
+
+Kita akan membuktikan bahwa \(R\) merupakan relasi ekuivalensi, kemudian menentukan seluruh kelas ekuivalensinya.
+
+<h2>(a) Membuktikan bahwa \(R\) merupakan relasi ekuivalensi</h2>
+
+Suatu relasi disebut relasi ekuivalensi jika memenuhi tiga sifat:
+
+1. Refleksif.
+2. Simetris.
+3. Transitif.
+
+Mari kita buktikan satu per satu.
+
+<h3>1. Sifat refleksif</h3>
+
+Definisi: Relasi \(R\) bersifat refleksif jika untuk setiap \(A\in M_{2\times2}(\mathbb Z_3)\), berlaku \(A\,R\,A\).
+
+Ambil sembarang matriks
+
+\[ A= \begin{pmatrix} a_{11}&a_{12}\\ a_{21}&a_{22} \end{pmatrix}. \]
+
+Menurut definisi relasi \(R\),
+
+\[ A\,R\,A \iff a_{11}=a_{11}. \]
+
+Karena setiap elemen selalu sama dengan dirinya sendiri, maka \(a_{11}=a_{11}\) benar.
+
+Dengan demikian,
+
+\[ \boxed{\forall A\in M_{2\times2}(\mathbb Z_3), \quad A\,R\,A.} \]
+
+Jadi, relasi \(R\) bersifat refleksif.
+
+<h3>2. Sifat simetris</h3>
+
+Definisi: Relasi \(R\) bersifat simetris jika untuk setiap \(A,B\in M_{2\times2}(\mathbb Z_3)\),
+
+\[ A\,R\,B\implies B\,R\,A. \]
+
+Ambil sembarang matriks
+
+\[ A=\begin{pmatrix} a_{11}&a_{12}\\ a_{21}&a_{22} \end{pmatrix}, \qquad B=\begin{pmatrix} b_{11}&b_{12}\\ b_{21}&b_{22} \end{pmatrix}. \]
+
+Misalkan \(A\,R\,B\). Berdasarkan definisi relasi, diperoleh
+
+\[ a_{11}=b_{11}. \]
+
+Karena kesamaan bersifat simetris, maka
+
+\[ b_{11}=a_{11}. \]
+
+Akibatnya, menurut definisi \(R\),
+
+\[ B\,R\,A. \]
+
+Dengan demikian,
+
+\[ \boxed{A\,R\,B\implies B\,R\,A.} \]
+
+Jadi, relasi \(R\) bersifat simetris.
+
+<h3>3. Sifat transitif</h3>
+
+Definisi: Relasi \(R\) bersifat transitif jika untuk setiap \(A,B,C\in M_{2\times2}(\mathbb Z_3)\),
+
+\[ (A\,R\,B)\land(B\,R\,C) \implies A\,R\,C. \]
+
+Ambil sembarang matriks \(A,B,C\) dalam \(M_{2\times2}(\mathbb Z_3)\).
+
+Misalkan
+
+\[ A\,R\,B \quad\text{dan}\quad B\,R\,C. \]
+
+Dari \(A\,R\,B\), berdasarkan definisi \(R\), diperoleh
+
+\[ a_{11}=b_{11}. \]
+
+Sementara itu, dari \(B\,R\,C\), diperoleh
+
+\[ b_{11}=c_{11}. \]
+
+Dengan menggunakan sifat transitif kesamaan, kita mendapatkan
+
+\[ a_{11}=b_{11}=c_{11}, \]
+
+sehingga
+
+\[ a_{11}=c_{11}. \]
+
+Berdasarkan definisi relasi \(R\), kesamaan ini berarti
+
+\[ A\,R\,C. \]
+
+Dengan demikian,
+
+\[ \boxed{ (A\,R\,B)\land(B\,R\,C) \implies A\,R\,C. } \]
+
+Jadi, relasi \(R\) bersifat transitif.
+
+<h3>Kesimpulan bagian (a)</h3>
+
+Kita telah membuktikan bahwa relasi \(R\) memenuhi ketiga sifat berikut:
+
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Sifat</th>
+    <th>Hasil pembuktian</th>
+  </tr>
+  <tr>
+    <td>Refleksif</td>
+    <td>\(A\,R\,A\)</td>
+  </tr>
+  <tr>
+    <td>Simetris</td>
+    <td>\(A\,R\,B\implies B\,R\,A\)</td>
+  </tr>
+  <tr>
+    <td>Transitif</td>
+    <td>\(A\,R\,B\) dan \(B\,R\,C\implies A\,R\,C\)</td>
+  </tr>
+</table>
+
+Oleh karena itu,
+
+\[ \boxed{R\text{ merupakan relasi ekuivalensi pada } M_{2\times2}(\mathbb Z_3).} \]
+
+<h2>(b) Menentukan semua kelas ekuivalensi</h2>
+
+Setelah mengetahui bahwa \(R\) merupakan relasi ekuivalensi, kita menentukan kelas-kelas ekuivalensinya.
+
+<h3>1. Memahami kelas ekuivalensi</h3>
+
+Kelas ekuivalensi suatu matriks \(A\), yang ditulis \([A]\), didefinisikan sebagai
+
+\[ [A]=\{B\in M_{2\times2}(\mathbb Z_3)\mid B\,R\,A\}. \]
+
+Artinya, kelas ekuivalensi \([A]\) memuat semua matriks \(B\) yang berelasi dengan \(A\).
+
+Karena relasi yang diberikan hanya memperhatikan entri kiri atas, maka
+
+\[ B\,R\,A\iff b_{11}=a_{11}. \]
+
+Jadi, dua matriks berada dalam kelas ekuivalensi yang sama tepat ketika entri kiri atasnya sama. Ketiga entri lainnya boleh berbeda secara bebas.
+
+<h3>2. Menentukan banyak anggota himpunan matriks</h3>
+
+Karena setiap entri matriks berasal dari \(\mathbb Z_3=\{0,1,2\}\), terdapat tiga pilihan untuk setiap entri.
+
+Sebuah matriks berukuran \(2\times2\) memiliki empat entri yang dipilih secara bebas. Oleh karena itu,
+
+\[ \left|M_{2\times2}(\mathbb Z_3)\right| =3^4=81. \]
+
+Dengan demikian, terdapat 81 matriks dalam himpunan tersebut.
+
+Namun, relasi \(R\) hanya membedakan matriks berdasarkan satu entri, yaitu \(a_{11}\). Karena \(a_{11}\) hanya dapat bernilai \(0\), \(1\), atau \(2\), maka akan terbentuk tiga kelas ekuivalensi.
+
+<h3>3. Kelas ekuivalensi pertama: entri kiri atas \(0\)</h3>
+
+Pilih matriks \(A\) dengan \(a_{11}=0\). Kelas ekuivalensinya adalah
+
+\[ \boxed{ C_0= \left\{ \begin{pmatrix} 0&b\\ c&d \end{pmatrix} \;\middle|\; b,c,d\in\{0,1,2\} \right\}. } \]
+
+Sebagai contoh, anggota kelas \(C_0\) antara lain:
+
+\[ \begin{pmatrix}0&0\\0&0\end{pmatrix}, \quad \begin{pmatrix}0&1\\2&0\end{pmatrix}, \quad \begin{pmatrix}0&2\\1&2\end{pmatrix}. \]
+
+Semua matriks tersebut berada dalam kelas yang sama karena entri kiri atasnya sama dengan \(0\).
+
+Untuk menentukan banyak anggotanya, entri \(b,c,d\) masing-masing memiliki tiga pilihan. Jadi,
+
+\[ |C_0|=3^3=\boxed{27}. \]
+
+<h3>4. Kelas ekuivalensi kedua: entri kiri atas \(1\)</h3>
+
+Dengan cara yang sama, untuk matriks yang entri kiri atasnya \(1\), diperoleh
+
+\[ \boxed{ C_1= \left\{ \begin{pmatrix} 1&b\\ c&d \end{pmatrix} \;\middle|\; b,c,d\in\mathbb Z_3 \right\}. } \]
+
+Contoh anggota kelas ini adalah
+
+\[ \begin{pmatrix}1&0\\0&0\end{pmatrix}, \quad \begin{pmatrix}1&1\\2&0\end{pmatrix}, \quad \begin{pmatrix}1&2\\1&2\end{pmatrix}. \]
+
+Semua matriks tersebut berelasi karena entri kiri atasnya sama dengan \(1\).
+
+Banyak anggotanya adalah
+
+\[ |C_1|=3^3=\boxed{27}. \]
+
+<h3>5. Kelas ekuivalensi ketiga: entri kiri atas \(2\)</h3>
+
+Untuk matriks yang entri kiri atasnya \(2\), diperoleh
+
+\[ \boxed{ C_2= \left\{ \begin{pmatrix} 2&b\\ c&d \end{pmatrix} \;\middle|\; b,c,d\in\mathbb Z_3 \right\}. } \]
+
+Contoh anggota kelas ini adalah
+
+\[ \begin{pmatrix}2&0\\0&0\end{pmatrix}, \quad \begin{pmatrix}2&1\\2&0\end{pmatrix}, \quad \begin{pmatrix}2&2\\1&2\end{pmatrix}. \]
+
+Semua matriks tersebut berelasi karena entri kiri atasnya sama dengan \(2\).
+
+Banyak anggotanya adalah
+
+\[ |C_2|=3^3=\boxed{27}. \]
+
+<h2>6. Memastikan seluruh kelas ekuivalensi telah diperoleh</h2>
+
+Karena entri kiri atas hanya dapat bernilai \(0\), \(1\), atau \(2\), ketiga kelas tersebut sudah mencakup seluruh kemungkinan.
+
+Kita juga dapat memeriksa bahwa jumlah anggota seluruh kelas sama dengan banyak anggota himpunan semula:
+
+\[ |C_0|+|C_1|+|C_2| =27+27+27=81. \]
+
+Hasil ini sama dengan
+
+\[ |M_{2\times2}(\mathbb Z_3)|=81. \]
+
+Selain itu, ketiga kelas tersebut saling lepas. Sebagai contoh, suatu matriks tidak mungkin sekaligus memiliki entri kiri atas \(0\) dan \(1\). Hal serupa berlaku untuk pasangan nilai lainnya.
+
+Dengan demikian, ketiga kelas itu membentuk partisi dari \(M_{2\times2}(\mathbb Z_3)\).
+
+<h2>Jawaban akhir</h2>
+
+(a) Relasi \(R\) merupakan relasi ekuivalensi karena memenuhi sifat refleksif, simetris, dan transitif.
+
+(b) Semua kelas ekuivalensi yang terbentuk adalah
+
+\[ \boxed{ C_0= \left\{ \begin{pmatrix} 0&b\\ c&d \end{pmatrix} \;\middle|\; b,c,d\in\mathbb Z_3 \right\}, } \]
+
+\[ \boxed{ C_1= \left\{ \begin{pmatrix} 1&b\\ c&d \end{pmatrix} \;\middle|\; b,c,d\in\mathbb Z_3 \right\}, } \]
+
+dan
+
+\[ \boxed{ C_2= \left\{ \begin{pmatrix} 2&b\\ c&d \end{pmatrix} \;\middle|\; b,c,d\in\mathbb Z_3 \right\}. } \]
+
+Jadi, terdapat tepat 3 kelas ekuivalensi, masing-masing memiliki 27 anggota.
+
+Secara keseluruhan, himpunan hasil bagi (quotient set) adalah
+
+\[ \boxed{ M_{2\times2}(\mathbb Z_3)/R =\{C_0,C_1,C_2\}. } \]
+
+Inti pemahamannya: relasi ekuivalensi mengelompokkan matriks berdasarkan kesamaan satu entri tertentu. Dalam soal ini, entri kiri atas menjadi penentu kelas, sedangkan ketiga entri lainnya bebas mengambil nilai dalam \(\mathbb Z_3\).
+</li>
 </ol>
 </p>
 </div>
@@ -17852,7 +18107,7 @@ A_xA_{-x} = A_0 = A_{-x}A_x.
 \]
 </li>
 <li>
-Tunjukkan bahwa himpunan semua bilangan rasional positip denag operasi biner yang didefiniskan oleh
+Tunjukkan bahwa himpunan semua bilangan rasional positip dengan operasi biner yang didefiniskan oleh
 \[
 a*b = \frac{ab}{2}, \forall a,b\in\mathbb{Q}
 \]
@@ -17914,6 +18169,89 @@ Kalikan dengan \(a\) dari kiri dan \(b\) dari kanan: \(a(abab)b = aeb\)<br>
 Jika ada elemen berorder 4, maka \(G \cong \mathbb{Z}_4\)<br>
 Jika tidak, semua elemen ≠ e berorder 2, maka \(G \cong V_4 = \{e,a,b,ab\}\) dengan \(a^2 = b^2 = (ab)^2 = e\)
 </li>
+
+<li>
+    
+    <div class="question-box">
+        <p><strong>Diketahui:</strong> Grup perkalian <em>G = U(16) = {1, 3, 5, 7, 9, 11, 13, 15}</em> terhadap operasi perkalian modulo 16.</p>
+    </div>
+
+    <div class="solution-section">
+        <h3>(a) Menentukan order dari setiap elemen di dalam <em>G</em></h3>
+        <p>Order suatu elemen <em>a</em> dalam grup, dinotasikan dengan <em>o(a)</em>, adalah bilangan bulat positif terkecil <em>k</em> sedemikian sehingga <em>a<sup>k</sup> &equiv; 1 (mod 16)</em>.</p>
+        <ul>
+            <li><strong>o(1):</strong> 1<sup>1</sup> &equiv; 1 (mod 16) &rArr; <strong>o(1) = 1</strong></li>
+            <li><strong>o(3):</strong> 
+                3<sup>1</sup> &equiv; 3, 
+                3<sup>2</sup> &equiv; 9, 
+                3<sup>3</sup> &equiv; 27 &equiv; 11, 
+                3<sup>4</sup> &equiv; 33 &equiv; 1 (mod 16) &rArr; <strong>o(3) = 4</strong>
+            </li>
+            <li><strong>o(5):</strong> 
+                5<sup>1</sup> &equiv; 5, 
+                5<sup>2</sup> &equiv; 25 &equiv; 9, 
+                5<sup>3</sup> &equiv; 45 &equiv; 13, 
+                5<sup>4</sup> &equiv; 65 &equiv; 1 (mod 16) &rArr; <strong>o(5) = 4</strong>
+            </li>
+            <li><strong>o(7):</strong> 
+                7<sup>1</sup> &equiv; 7, 
+                7<sup>2</sup> &equiv; 49 &equiv; 1 (mod 16) &rArr; <strong>o(7) = 2</strong>
+            </li>
+            <li><strong>o(9):</strong> 
+                9<sup>1</sup> &equiv; 9, 
+                9<sup>2</sup> &equiv; 81 &equiv; 1 (mod 16) &rArr; <strong>o(9) = 2</strong>
+            </li>
+            <li><strong>o(11):</strong> 
+                11<sup>1</sup> &equiv; 11, 
+                11<sup>2</sup> &equiv; 121 &equiv; 9, 
+                11<sup>3</sup> &equiv; 99 &equiv; 3, 
+                11<sup>4</sup> &equiv; 33 &equiv; 1 (mod 16) &rArr; <strong>o(11) = 4</strong>
+            </li>
+            <li><strong>o(13):</strong> 
+                13<sup>1</sup> &equiv; 13, 
+                13<sup>2</sup> &equiv; 169 &equiv; 9, 
+                13<sup>3</sup> &equiv; 117 &equiv; 5, 
+                13<sup>4</sup> &equiv; 65 &equiv; 1 (mod 16) &rArr; <strong>o(13) = 4</strong>
+            </li>
+            <li><strong>o(15):</strong> 
+                15<sup>1</sup> &equiv; 15, 
+                15<sup>2</sup> &equiv; 225 &equiv; 1 (mod 16) &rArr; <strong>o(15) = 2</strong>
+            </li>
+        </ul>
+    </div>
+
+    <div class="solution-section">
+        <h3>(b) Apakah <em>G</em> merupakan grup siklik? Buktikan!</h3>
+        <p><strong>Jawaban:</strong> Tidak, <em>G = U(16)</em> bukan merupakan grup siklik.</p>
+        <p><strong>Bukti:</strong> Suatu grup berhingga berorde <em>n</em> dikatakan siklik jika dan hanya jika terdapat elemen di dalam grup tersebut yang memiliki order sama dengan <em>n</em>. Perhatikan bahwa order dari grup <em>G</em> adalah |<em>G</em>| = 8. Berdasarkan perhitungan pada poin (a), elemen-elemen di dalam <em>G</em> memiliki order maksimum 4 (yaitu 3, 5, 11, dan 13). Karena tidak ada elemen di dalam <em>G</em> yang memiliki order 8 (sama dengan orde grup), maka terbukti bahwa <em>G</em> <strong>bukan grup siklik</strong>.</p>
+    </div>
+
+    <div class="solution-section">
+        <h3>(c) Dapatkan semua subgroup siklik dari <em>G</em> beserta anggotanya</h3>
+        <p>Subgroup siklik dibentuk oleh perpangkatan dari masing-masing elemen di dalam <em>G</em>:</p>
+        <ul>
+            <li>&lang;1&rang; = {1} (berorde 1)</li>
+            <li>&lang;3&rang; = {1, 3, 9, 11} (berorde 4)</li>
+            <li>&lang;5&rang; = {1, 5, 9, 13} (berorde 4)</li>
+            <li>&lang;7&rang; = {1, 7} (berorde 2)</li>
+            <li>&lang;9&rang; = {1, 9} (berorde 2)</li>
+            <li>&lang;11&rang; = {1, 11, 9, 3} = {1, 3, 9, 11} (sama dengan &lang;3&rang;)</li>
+            <li>&lang;13&rang; = {1, 13, 9, 5} = {1, 5, 9, 13} (sama dengan &lang;5&rang;)</li>
+            <li>&lang;15&rang; = {1, 15} (berorde 2)</li>
+        </ul>
+        <p>Sehingga, seluruh subgroup siklik yang tunggal dari $G$ adalah:</p>
+        <ol>
+            <li><strong>{1}</strong></li>
+            <li><strong>{1, 7}</strong></li>
+            <li><strong>{1, 9}</strong></li>
+            <li><strong>{1, 15}</strong></li>
+            <li><strong>{1, 3, 9, 11}</strong></li>
+            <li><strong>{1, 5, 9, 13}</strong></li>
+        </ol>
+    </div>
+
+</li>
+
 </ol>
 </div>
 </div>
@@ -18744,6 +19082,610 @@ berorder \(5\) dan merupakan subgrup dari \(S_5\).
 </li>
 </ul>
 </li>
+
+<li>
+
+
+  <h2>Subgrup dari GL(2, ℝ)</h2>
+
+  <p class="lead">
+    Diberikan grup linear umum berderajat dua
+    <span class="math-inline">\(GL(2,\mathbb{R})\)</span>, yaitu
+    himpunan semua matriks persegi berukuran
+    <span class="math-inline">\(2\times 2\)</span> dengan entri
+    bilangan real dan determinan tidak nol. Soal ini meminta kita
+    mengonstruksi suatu subgrup sejati yang tak trivial serta
+    suatu himpunan yang bukan subgrup dari
+    <span class="math-inline">\(GL(2,\mathbb{R})\)</span>.
+  </p>
+
+  <div class="definition-container">
+    <div class="definition-header" onclick="toggleDefinisi(this)">
+      <span><b>Landasan Teori: Grup Linear Umum</b></span>
+      <span class="arrow">▼</span>
+    </div>
+
+    <div class="definition-box">
+      <p>Didefinisikan</p>
+
+      \[
+      GL(2,\mathbb{R})=
+      \left\{
+      \begin{pmatrix}
+      a&b\\
+      c&d
+      \end{pmatrix}
+      \;\middle|\;
+      a,b,c,d\in\mathbb{R},\
+      ad-bc\neq 0
+      \right\}.
+      \]
+
+      <p>
+        Operasi grup pada himpunan ini adalah perkalian matriks.
+        Matriks identitasnya adalah
+      </p>
+
+      \[
+      I_2=
+      \begin{pmatrix}
+      1&0\\
+      0&1
+      \end{pmatrix}.
+      \]
+
+      <p>
+        Setiap matriks dalam
+        <span class="math-inline">\(GL(2,\mathbb{R})\)</span>
+        mempunyai invers, karena determinannya tidak nol.
+      </p>
+    </div>
+  </div>
+
+  <div class="definition-container">
+    <div class="definition-header" onclick="toggleDefinisi(this)">
+      <span><b>Uji Subgrup</b></span>
+      <span class="arrow">▼</span>
+    </div>
+
+    <div class="definition-box">
+      <p>
+        Misalkan <span class="math-inline">\(G\)</span> adalah grup
+        dan <span class="math-inline">\(H\subseteq G\)</span>.
+        Himpunan <span class="math-inline">\(H\)</span> merupakan
+        subgrup dari <span class="math-inline">\(G\)</span> jika
+        memenuhi syarat berikut:
+      </p>
+
+      <ol>
+        <li>
+          <b>Tidak kosong:</b>
+          <span class="math-inline">\(H\neq\varnothing\)</span>.
+        </li>
+        <li>
+          <b>Tertutup terhadap perkalian:</b>
+          jika <span class="math-inline">\(A,B\in H\)</span>,
+          maka <span class="math-inline">\(AB\in H\)</span>.
+        </li>
+        <li>
+          <b>Tertutup terhadap invers:</b>
+          jika <span class="math-inline">\(A\in H\)</span>,
+          maka <span class="math-inline">\(A^{-1}\in H\)</span>.
+        </li>
+      </ol>
+
+      <p>
+        Karena operasi pada <span class="math-inline">\(H\)</span>
+        diwarisi dari grup <span class="math-inline">\(G\)</span>,
+        sifat asosiatif juga berlaku. Ketiga syarat di atas cukup
+        untuk membuktikan bahwa <span class="math-inline">\(H\)</span>
+        adalah subgrup.
+      </p>
+
+      <p>
+        Secara ekuivalen, kita dapat menggunakan kriteria:
+      </p>
+
+      \[
+      H\neq\varnothing,\qquad
+      A,B\in H\Longrightarrow AB^{-1}\in H.
+      \]
+    </div>
+  </div>
+
+  <!-- BAGIAN A -->
+
+  <details open>
+    <summary>
+      <b>(a) Mengonstruksi Subgrup Sejati yang Tak Trivial</b>
+    </summary>
+
+    <h3>1. Konstruksi Himpunan</h3>
+
+    <p>
+      Kita definisikan himpunan semua matriks diagonal dengan
+      kedua entri diagonal tidak nol:
+    </p>
+
+    \[
+    H=
+    \left\{
+    \begin{pmatrix}
+    a&0\\
+    0&b
+    \end{pmatrix}
+    \;\middle|\;
+    a,b\in\mathbb{R}\setminus\{0\}
+    \right\}.
+    \]
+
+    <p>
+      Setiap matriks dalam <span class="math-inline">\(H\)</span>
+      mempunyai determinan
+    </p>
+
+    \[
+    \det\begin{pmatrix}
+    a&0\\
+    0&b
+    \end{pmatrix}=ab\neq 0.
+    \]
+
+    <p>
+      Jadi, setiap elemen <span class="math-inline">\(H\)</span>
+      merupakan matriks yang mempunyai invers. Dengan demikian,
+    </p>
+
+    \[
+    H\subseteq GL(2,\mathbb{R}).
+    \]
+
+    <h3>2. Membuktikan Himpunan Tidak Kosong</h3>
+
+    <p>
+      Ambil <span class="math-inline">\(a=b=1\)</span>.
+      Kita memperoleh
+    </p>
+
+    \[
+    I_2=
+    \begin{pmatrix}
+    1&0\\
+    0&1
+    \end{pmatrix}\in H.
+    \]
+
+    <p>
+      Karena terdapat setidaknya satu elemen dalam
+      <span class="math-inline">\(H\)</span>, maka
+      <span class="math-inline">\(H\neq\varnothing\)</span>.
+    </p>
+
+    <h3>3. Membuktikan Tertutup terhadap Perkalian</h3>
+
+    <p>
+      Ambil sembarang dua elemen
+      <span class="math-inline">\(A,B\in H\)</span>, dengan
+    </p>
+
+    \[
+    A=\begin{pmatrix}
+    a&0\\
+    0&b
+    \end{pmatrix},
+    \qquad
+    B=\begin{pmatrix}
+    c&0\\
+    0&d
+    \end{pmatrix},
+    \]
+
+    <p>
+      di mana <span class="math-inline">\(a,b,c,d\neq 0\)</span>.
+      Hasil perkaliannya adalah
+    </p>
+
+    \[
+    AB=
+    \begin{pmatrix}
+    a&0\\
+    0&b
+    \end{pmatrix}
+    \begin{pmatrix}
+    c&0\\
+    0&d
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    ac&0\\
+    0&bd
+    \end{pmatrix}.
+    \]
+
+    <p>
+      Karena hasil kali bilangan real tidak nol tetap tidak nol,
+      maka <span class="math-inline">\(ac\neq0\)</span> dan
+      <span class="math-inline">\(bd\neq0\)</span>. Akibatnya,
+    </p>
+
+    \[
+    AB=
+    \begin{pmatrix}
+    ac&0\\
+    0&bd
+    \end{pmatrix}\in H.
+    \]
+
+    <p>
+      Jadi, <span class="math-inline">\(H\)</span> tertutup
+      terhadap perkalian matriks.
+    </p>
+
+    <h3>4. Membuktikan Tertutup terhadap Invers</h3>
+
+    <p>
+      Ambil sembarang
+      <span class="math-inline">\(A\in H\)</span>, yaitu
+    </p>
+
+    \[
+    A=\begin{pmatrix}
+    a&0\\
+    0&b
+    \end{pmatrix},
+    \qquad a,b\neq0.
+    \]
+
+    <p>
+      Invers matriks tersebut adalah
+    </p>
+
+    \[
+    A^{-1}=
+    \begin{pmatrix}
+    \dfrac{1}{a}&0\\
+    0&\dfrac{1}{b}
+    \end{pmatrix}.
+    \]
+
+    <p>
+      Karena <span class="math-inline">\(a,b\neq0\)</span>,
+      maka <span class="math-inline">\(1/a\neq0\)</span> dan
+      <span class="math-inline">\(1/b\neq0\)</span>. Dengan
+      demikian,
+    </p>
+
+    \[
+    A^{-1}\in H.
+    \]
+
+    <p>
+      Jadi, <span class="math-inline">\(H\)</span> tertutup
+      terhadap pengambilan invers.
+    </p>
+
+    <h3>5. Membuktikan bahwa H adalah Subgrup Sejati</h3>
+
+    <p>
+      Dari langkah-langkah sebelumnya, kita telah membuktikan
+      bahwa <span class="math-inline">\(H\)</span> tidak kosong,
+      tertutup terhadap perkalian, dan tertutup terhadap invers.
+      Oleh karena itu,
+    </p>
+
+    \[
+    \boxed{H\leq GL(2,\mathbb{R}).}
+    \]
+
+    <p>
+      Selanjutnya, kita periksa bahwa subgrup ini tak trivial
+      dan bukan seluruh grup.
+    </p>
+
+    <p><b>Tak trivial.</b> Himpunan \(H\) memuat matriks selain
+    identitas, misalnya</p>
+
+    \[
+    \begin{pmatrix}
+    2&0\\
+    0&1
+    \end{pmatrix}\in H,
+    \qquad
+    \begin{pmatrix}
+    2&0\\
+    0&1
+    \end{pmatrix}\neq I_2.
+    \]
+
+    <p><b>Subgrup sejati.</b> Pertimbangkan matriks</p>
+
+    \[
+    C=\begin{pmatrix}
+    1&1\\
+    0&1
+    \end{pmatrix}.
+    \]
+
+    <p>
+      Determinannya adalah
+      <span class="math-inline">\(\det(C)=1\neq0\)</span>,
+      sehingga <span class="math-inline">\(C\in GL(2,\mathbb{R})\)</span>.
+      Namun, <span class="math-inline">\(C\notin H\)</span>
+      karena \(C\) bukan matriks diagonal.
+    </p>
+
+    <p>
+      Jadi, <span class="math-inline">\(H\)</span> merupakan
+      subgrup sejati yang tak trivial dari
+      <span class="math-inline">\(GL(2,\mathbb{R})\)</span>.
+    </p>
+
+    \[
+    \boxed{
+    \{I_2\}\subsetneq H\subsetneq GL(2,\mathbb{R}).
+    }
+    \]
+
+  </details>
+
+  <!-- BAGIAN B -->
+
+  <details open>
+    <summary>
+      <b>(b) Mengonstruksi Himpunan yang Bukan Subgrup</b>
+    </summary>
+
+    <h3>1. Konstruksi Himpunan</h3>
+
+    <p>
+      Definisikan himpunan
+    </p>
+
+    \[
+    S=
+    \left\{
+    A\in GL(2,\mathbb{R})
+    \;\middle|\;
+    \det(A)>1
+    \right\}.
+    \]
+
+    <p>
+      Himpunan ini berisi matriks-matriks invertibel yang
+      determinannya lebih besar dari satu. Karena setiap
+      matriks dalam \(S\) mempunyai determinan tidak nol,
+      maka \(S\subseteq GL(2,\mathbb{R})\).
+    </p>
+
+    <h3>2. Membuktikan bahwa S Bukan Subgrup</h3>
+
+    <p>
+      Salah satu syarat mendasar subgrup adalah memuat elemen
+      identitas dari grup induknya. Elemen identitas pada
+      \(GL(2,\mathbb{R})\) adalah
+    </p>
+
+    \[
+    I_2=\begin{pmatrix}
+    1&0\\
+    0&1
+    \end{pmatrix}.
+    \]
+
+    <p>
+      Determinan matriks identitas tersebut adalah
+    </p>
+
+    \[
+    \det(I_2)=1.
+    \]
+
+    <p>
+      Akan tetapi, anggota \(S\) harus memenuhi
+      \(\det(A)>1\). Karena \(1\) tidak lebih besar dari \(1\),
+      maka
+    </p>
+
+    \[
+    I_2\notin S.
+    \]
+
+    <p>
+      Jadi, \(S\) tidak memuat elemen identitas
+      \(GL(2,\mathbb{R})\). Akibatnya,
+    </p>
+
+    \[
+    \boxed{S\text{ bukan subgrup dari }GL(2,\mathbb{R}).}
+    \]
+
+    <h3>3. Alternatif: Gagal karena Tidak Tertutup terhadap Invers</h3>
+
+    <p>
+      Kegagalan sifat subgrup juga dapat diperlihatkan dengan
+      menggunakan invers. Ambil
+    </p>
+
+    \[
+    A=\begin{pmatrix}
+    2&0\\
+    0&1
+    \end{pmatrix}.
+    \]
+
+    <p>
+      Karena \(\det(A)=2>1\), maka \(A\in S\). Namun,
+    </p>
+
+    \[
+    A^{-1}=
+    \begin{pmatrix}
+    \dfrac12&0\\
+    0&1
+    \end{pmatrix},
+    \qquad
+    \det(A^{-1})=\frac12<1.
+    \]
+
+    <p>
+      Dengan demikian, \(A^{-1}\notin S\). Jadi, \(S\)
+      juga gagal memenuhi syarat tertutup terhadap invers.
+    </p>
+
+  </details>
+
+  <!-- RINGKASAN -->
+
+  <div class="definition-container">
+    <div class="definition-header" onclick="toggleDefinisi(this)">
+      <span><b>Ringkasan dan Kesimpulan</b></span>
+      <span class="arrow">▼</span>
+    </div>
+
+    <div class="definition-box">
+      <p><b>Bagian (a): Subgrup sejati tak trivial</b></p>
+
+      \[
+      H=
+      \left\{
+      \begin{pmatrix}
+      a&0\\
+      0&b
+      \end{pmatrix}
+      \;\middle|\;
+      a,b\in\mathbb{R}\setminus\{0\}
+      \right\}.
+      \]
+
+      <p>
+        Himpunan \(H\) memuat identitas, tertutup terhadap
+        perkalian dan invers, serta bukan hanya
+        \(\{I_2\}\) maupun seluruh \(GL(2,\mathbb{R})\).
+      </p>
+
+      <p><b>Bagian (b): Bukan subgrup</b></p>
+
+      \[
+      S=
+      \{A\in GL(2,\mathbb{R})\mid\det(A)>1\}.
+      \]
+
+      <p>
+        Himpunan \(S\) bukan subgrup karena tidak memuat
+        matriks identitas. Selain itu, \(S\) tidak tertutup
+        terhadap invers.
+      </p>
+
+      <p>
+        <b>Pelajaran utama:</b> untuk membuktikan bahwa suatu
+        himpunan merupakan subgrup, semua syarat subgrup harus
+        dipenuhi. Sebaliknya, untuk membuktikan bahwa suatu
+        himpunan bukan subgrup, cukup menunjukkan satu syarat
+        yang gagal.
+      </p>
+    </div>
+  </div>
+
+</li>
+
+<li>
+
+<div class="box">
+        Diberikan grup <span class="math">G = ℝ \ {1}</span> dengan operasi biner:<br>
+        <span class="math">a * b = a + b - ab</span><br>
+        dan himpunan <span class="math">H = (-∞, 1)</span>.
+        <br><br>
+        (a) Buktikan bahwa <span class="math">H</span> adalah subgrup normal dari <span class="math">G</span>.<br>
+        (b) Tentukan semua koset kiri dari <span class="math">H</span> dalam <span class="math">G</span>.
+    </div>
+
+    <h3>(a) Bukti bahwa H adalah Subgrup Normal dari G</h3>
+
+    <p>Untuk membuktikan <span class="math">H</span> adalah subgrup normal, kita harus membuktikan dua hal:</p>
+    <ol>
+        <li><span class="math">H</span> adalah subgrup dari <span class="math">G</span>.</li>
+        <li><span class="math">H</span> bersifat normal (yaitu <span class="math">g * H * g⁻¹ = H</span> untuk setiap <span class="math">g ∈ G</span>).</li>
+    </ol>
+
+    <h4>Langkah 1: Bukti H adalah Subgrup</h4>
+    <p>Kita periksa syarat tertutup dan memiliki invers di dalam <span class="math">H</span>.</p>
+    
+    <ul>
+        <li>
+            <strong>Tertutup:</strong><br>
+            Ambil sebarang <span class="math">a, b ∈ H</span>, maka <span class="math">a < 1</span> dan <span class="math">b < 1</span>.
+            Perhatikan bahwa:
+            <span class="math">a * b = a + b - ab = 1 - (1 - a)(1 - b)</span>.
+            Karena <span class="math">a < 1</span>, maka <span class="math">(1 - a) > 0</span>. Begitu pula <span class="math">(1 - b) > 0</span>.
+            Akibatnya, <span class="math">(1 - a)(1 - b) > 0</span>.
+            Maka <span class="math">a * b = 1 - (positif) < 1</span>.
+            Jadi, <span class="math">a * b ∈ H</span>. Terbukti tertutup.
+        </li>
+        <li>
+            <strong>Elemen Identitas:</strong><br>
+            Elemen identitas dari <span class="math">G</span> adalah <span class="math">e = 0</span> karena <span class="math">a * 0 = a + 0 - 0 = a</span>.
+            Karena <span class="math">0 < 1</span>, maka <span class="math">0 ∈ H</span>.
+        </li>
+        <li>
+            <strong>Invers:</strong><br>
+            Invers dari <span class="math">a ∈ G</span> adalah <span class="math">a⁻¹ = a / (a - 1)</span>.
+            Jika <span class="math">a < 1</span>, maka <span class="math">a - 1 < 0</span>.
+            Perhatikan bahwa <span class="math">a⁻¹ - 1 = a/(a-1) - 1 = (a - (a-1))/(a-1) = 1/(a-1)</span>.
+            Karena <span class="math">a - 1 < 0</span>, maka <span class="math">1/(a-1) < 0</span>.
+            Akibatnya <span class="math">a⁻¹ - 1 < 0</span>, sehingga <span class="math">a⁻¹ < 1</span>.
+            Jadi, <span class="math">a⁻¹ ∈ H</span>. Terbukti memiliki invers di <span class="math">H</span>.
+        </li>
+    </ul>
+    <p>Karena ketiga syarat terpenuhi, maka <span class="math">H</span> adalah subgrup dari <span class="math">G</span>.</p>
+
+    <h4>Langkah 2: Bukti H adalah Subgrup Normal</h4>
+    <p>Perhatikan bahwa operasi <span class="math">*</span> bersifat komutatif (Abelian):</p>
+    <p><span class="math">a * b = a + b - ab = b + a - ba = b * a</span></p>
+    <p>Dalam grup Abelian, setiap subgrup pasti merupakan subgrup normal. Kita bisa membuktikannya secara formal:</p>
+    <p>Ambil sebarang <span class="math">g ∈ G</span> dan <span class="math">h ∈ H</span>. Kita periksa <span class="math">g * h * g⁻¹</span>:</p>
+    <p><span class="math">g * h * g⁻¹ = (g * h) * g⁻¹ = (h * g) * g⁻¹ = h * (g * g⁻¹) = h * e = h</span></p>
+    <p>Karena hasilnya adalah <span class="math">h ∈ H</span>, maka <span class="math">g * H * g⁻¹ ⊆ H</span>. Dengan cara yang sama, berlaku juga untuk sebaliknya. Jadi, <span class="math">H</span> adalah subgrup normal dari <span class="math">G</span>. <strong>Terbukti.</strong></p>
+
+    <h3>(b) Menentukan Semua Koset Kiri dari H dalam G</h3>
+
+    <p>Koset kiri dari <span class="math">H</span> dalam <span class="math">G</span> didefinisikan sebagai himpunan:</p>
+    <p><span class="math">g * H = {g * h | h ∈ H}</span> untuk setiap <span class="math">g ∈ G</span>.</p>
+    
+    <p>Dengan menggunakan operasi yang diberikan:</p>
+    <p><span class="math">g * h = g + h - gh = g + h(1 - g)</span></p>
+
+    <p>Kita akan mencari bentuk himpunan ini dengan membagi kasus berdasarkan nilai <span class="math">g</span>:</p>
+
+    <h4>Kasus 1: g < 1</h4>
+    <p>Jika <span class="math">g < 1</span>, maka <span class="math">(1 - g) > 0</span>. Fungsi <span class="math">g + h(1 - g)</span> akan <strong>naik</strong> secara monoton terhadap <span class="math">h</span>.</p>
+    <p>Karena <span class="math">h ∈ H = (-∞, 1)</span>, maka:</p>
+    <ul>
+        <li>Batas bawah: saat <span class="math">h → -∞</span>, nilai <span class="math">g + h(1 - g) → -∞</span>.</li>
+        <li>Batas atas: saat <span class="math">h → 1⁻</span>, nilai <span class="math">g + 1(1 - g) = 1</span>.</li>
+    </ul>
+    <p>Jadi, untuk <span class="math">g < 1</span>, <span class="math">g * H = (-∞, 1) = H</span>.</p>
+
+    <h4>Kasus 2: g > 1</h4>
+    <p>Jika <span class="math">g > 1</span>, maka <span class="math">(1 - g) < 0</span>. Fungsi <span class="math">g + h(1 - g)</span> akan <strong>turun</strong> secara monoton terhadap <span class="math">h</span>.</p>
+    <p>Karena <span class="math">h ∈ H = (-∞, 1)</span>, maka:</p>
+    <ul>
+        <li>Batas bawah: saat <span class="math">h → -∞</span>, nilai <span class="math">g + h(1 - g) → ∞</span> (karena dikali negatif).</li>
+        <li>Batas atas: saat <span class="math">h → 1⁻</span>, nilai <span class="math">g + 1(1 - g) = 1</span>.</li>
+    </ul>
+    <p>Jadi, untuk <span class="math">g > 1</span>, <span class="math">g * H = (1, ∞)</span>.</p>
+
+    <div class="box">
+        <strong>Kesimpulan (b):</strong><br>
+        Semua koset kiri dari <span class="math">H</span> dalam <span class="math">G</span> adalah:
+        <ul>
+            <li><span class="math">H = (-∞, 1)</span> (diperoleh saat <span class="math">g < 1</span>)</li>
+            <li><span class="math">(1, ∞)</span> (diperoleh saat <span class="math">g > 1</span>)</li>
+        </ul>
+        Himpunan <span class="math">{(-∞, 1), (1, ∞)}</span> membentuk partisi dari <span class="math">G = ℝ \ {1}</span>.
+    </div>
+
+</li>
+
 </ol>
 </div>
 </div> 
